@@ -7,11 +7,13 @@ import WeatherService from '../../service/weatherService.js';
 // POST Request with city name to retrieve weather data
 router.post('/', async (req: Request, res: Response) => {
   const { cityName } = req.body;
+  console.log(`Received request for city: ${cityName}`);
   try {
     const weatherData = await WeatherService.getWeatherForCity(cityName);
     await HistoryService.addCity(cityName);
     res.json(weatherData);
   } catch (error) {
+    console.error('Error retrieving weather data:', error);
     res.status(500).json({ error: 'Failed to retrieve weather data' });
   }
 });
@@ -22,6 +24,7 @@ router.get('/history', async (_req: Request, res: Response) => {
     const cities = await HistoryService.getCities();
     res.json(cities);
   } catch (error) {
+    console.error('Error retrieving search history:', error);
     res.status(500).json({ error: 'Failed to retrieve search history' });
   }
 });
@@ -33,6 +36,7 @@ router.delete('/history/:id', async (req: Request, res: Response) => {
     await HistoryService.removeCity(id);
     res.json({ message: 'City removed from search history' });
   } catch (error) {
+    console.error('Error removing city from search history:', error);
     res.status(500).json({ error: 'Failed to remove city from search history' });
   }
 });
