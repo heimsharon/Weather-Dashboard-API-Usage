@@ -1,5 +1,8 @@
 import dotenv from 'dotenv';
 import fetch from 'node-fetch';
+import { fileURLToPath } from 'url';
+import path from 'path';
+
 dotenv.config();
 
 interface Coordinates {
