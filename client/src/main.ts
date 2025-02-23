@@ -1,4 +1,6 @@
 import './styles/jass.css';
+import { format } from 'date-fns';
+import { utcToZonedTime, format as formatTz } from 'date-fns-tz';
 
 // * All necessary DOM elements selected
 const searchForm: HTMLFormElement = document.getElementById('search-form') as HTMLFormElement;
@@ -71,8 +73,11 @@ Render Functions
 const renderCurrentWeather = (currentWeather: any): void => {
   const { city, date, icon, iconDescription, tempF, windSpeed, humidity } = currentWeather;
 
-  // convert the following to typescript
-  heading.textContent = `${city} (${date})`;
+  const timeZone = 'America/New_York'; // Change this to the desired timezone
+  const zonedDate = utcToZonedTime(new Date(date), timeZone);
+  const formattedDate = formatTz(zonedDate, 'MMMM do, yyyy h:mm a', { timeZone });
+
+  heading.textContent = `${city} (${formattedDate})`;
   weatherIcon.setAttribute('src', `https://openweathermap.org/img/w/${icon}.png`);
   weatherIcon.setAttribute('alt', iconDescription);
   weatherIcon.setAttribute('class', 'weather-img');
@@ -108,10 +113,14 @@ const renderForecast = (forecast: any): void => {
 const renderForecastCard = (forecast: any) => {
   const { date, icon, iconDescription, tempF, windSpeed, humidity } = forecast;
 
+  const timeZone = 'America/New_York'; // Change this to the desired timezone
+  const zonedDate = utcToZonedTime(new Date(date), timeZone);
+  const formattedDate = formatTz(zonedDate, 'MMMM do, yyyy h:mm a', { timeZone });
+
   const { col, cardTitle, weatherIcon, tempEl, windEl, humidityEl } = createForecastCard();
 
   // Add content to elements
-  cardTitle.textContent = date;
+  cardTitle.textContent = formattedDate;
   weatherIcon.setAttribute('src', `https://openweathermap.org/img/w/${icon}.png`);
   weatherIcon.setAttribute('alt', iconDescription);
   tempEl.textContent = `Temp: ${tempF} °F`;
