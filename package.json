@@ -13,13 +13,15 @@
     "client:build": "cd client && npm run build",
     "client:dev": "cd client && npm run dev",
     "build": "cd client && npm run build",
-    "render-build": "npm install && npm run build"
+    "render-build": "npm install && npm run build",
+    "postbuild": "copyfiles -u 1 server/db/db.json server/dist/db"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^8.2.2",
+    "copyfiles": "^2.4.1",
     "nodemon": "^3.1.0",
     "wait-on": "^7.2.0"
   },

@@ -12,7 +12,17 @@ class City {
 class HistoryService {
   private filePath = path.join(__dirname, '../db/db.json');
 
+  private async ensureFileExists() {
+    try {
+      await fs.access(this.filePath);
+    } catch (error) {
+      await fs.mkdir(path.dirname(this.filePath), { recursive: true });
+      await fs.writeFile(this.filePath, '[]');
+    }
+  }
+
   private async read(): Promise<City[]> {
+    await this.ensureFileExists();
     const data = await fs.readFile(this.filePath, 'utf-8');
     return JSON.parse(data);
   }
