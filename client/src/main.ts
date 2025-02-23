@@ -110,17 +110,20 @@ const renderForecast = (forecast: any): void => {
 const renderForecastCard = (forecast: any) => {
   const { date, icon, iconDescription, tempF, windSpeed, humidity } = forecast;
 
-  const { col, cardTitle, weatherIcon, tempEl, windEl, humidityEl } = createForecastCard();
+  const { col, card, cardBody, cardTitle, weatherIcon, tempEl, windEl, humidityEl } = createForecastCard();
 
   // Add content to elements
   cardTitle.textContent = date;
   weatherIcon.setAttribute('src', `https://openweathermap.org/img/w/${icon}.png`);
   weatherIcon.setAttribute('alt', iconDescription);
+  weatherIcon.classList.add('weather-img'); // Ensure the class is added
   tempEl.textContent = `Temp: ${tempF} °F`;
   windEl.textContent = `Wind: ${windSpeed} MPH`;
   humidityEl.textContent = `Humidity: ${humidity} %`;
 
-  col.append(cardTitle, weatherIcon, tempEl, windEl, humidityEl);
+  cardBody.append(cardTitle, weatherIcon, tempEl, windEl, humidityEl); // Append elements to card body
+
+  col.append(card);
 
   if (forecastContainer) {
     forecastContainer.append(col);
@@ -174,6 +177,8 @@ const createForecastCard = () => {
 
   return {
     col,
+    card,
+    cardBody,
     cardTitle,
     weatherIcon,
     tempEl,
