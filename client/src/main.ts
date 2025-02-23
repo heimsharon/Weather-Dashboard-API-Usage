@@ -71,7 +71,14 @@ Render Functions
 const renderCurrentWeather = (currentWeather: any): void => {
   const { city, date, icon, iconDescription, tempF, windSpeed, humidity } = currentWeather;
 
-  heading.textContent = `${city} (${date})`;
+  // Extract only the date part (YYYY-MM-DD) from the date string and format it
+  const formattedDate = new Date(date).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+
+  heading.textContent = `${city} (${formattedDate})`;
   weatherIcon.setAttribute('src', `https://openweathermap.org/img/w/${icon}.png`);
   weatherIcon.setAttribute('alt', iconDescription);
   weatherIcon.setAttribute('class', 'weather-img');
@@ -112,8 +119,15 @@ const renderForecastCard = (forecast: any) => {
 
   const { col, card, cardBody, cardTitle, weatherIcon, tempEl, windEl, humidityEl } = createForecastCard();
 
+  // Extract only the date part (YYYY-MM-DD) from the date string and format it
+  const formattedDate = new Date(date).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+
   // Add content to elements
-  cardTitle.textContent = date;
+  cardTitle.textContent = formattedDate;
   weatherIcon.setAttribute('src', `https://openweathermap.org/img/w/${icon}.png`);
   weatherIcon.setAttribute('alt', iconDescription);
   weatherIcon.classList.add('weather-img'); // Ensure the class is added
