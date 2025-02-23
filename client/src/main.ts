@@ -89,6 +89,8 @@ const renderCurrentWeather = (currentWeather: any): void => {
 };
 
 const renderForecast = (forecast: any): void => {
+  console.log('Forecast data:', forecast); // Log the forecast data
+
   const headingCol = document.createElement('div');
   const heading = document.createElement('h4');
 
@@ -153,15 +155,7 @@ Helper Functions
 const convertUTCToLocalTime = (utcDate: string, offset: number): string => {
   const date = new Date(utcDate);
   const localTime = new Date(date.getTime() + offset * 60 * 60 * 1000);
-  return localTime.toLocaleString('en-US', {
-    timeZone: 'UTC',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: true
-  });
+  return localTime.toString(); // Display raw date/time data
 };
 
 const createForecastCard = () => {
