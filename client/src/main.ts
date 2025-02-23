@@ -1,6 +1,4 @@
 import './styles/jass.css';
-import { format } from 'date-fns';
-import { utcToZonedTime, format as formatTz } from 'date-fns-tz';
 
 // * All necessary DOM elements selected
 const searchForm: HTMLFormElement = document.getElementById('search-form') as HTMLFormElement;
@@ -73,9 +71,7 @@ Render Functions
 const renderCurrentWeather = (currentWeather: any): void => {
   const { city, date, icon, iconDescription, tempF, windSpeed, humidity } = currentWeather;
 
-  const timeZone = 'America/New_York'; // Change this to the desired timezone
-  const zonedDate = utcToZonedTime(new Date(date), timeZone);
-  const formattedDate = formatTz(zonedDate, 'MMMM do, yyyy h:mm a', { timeZone });
+  const formattedDate = convertUTCToLocalTime(date, -5); // Example: -5 for EST (UTC-5)
 
   heading.textContent = `${city} (${formattedDate})`;
   weatherIcon.setAttribute('src', `https://openweathermap.org/img/w/${icon}.png`);
@@ -113,9 +109,7 @@ const renderForecast = (forecast: any): void => {
 const renderForecastCard = (forecast: any) => {
   const { date, icon, iconDescription, tempF, windSpeed, humidity } = forecast;
 
-  const timeZone = 'America/New_York'; // Change this to the desired timezone
-  const zonedDate = utcToZonedTime(new Date(date), timeZone);
-  const formattedDate = formatTz(zonedDate, 'MMMM do, yyyy h:mm a', { timeZone });
+  const formattedDate = convertUTCToLocalTime(date, -5); // Example: -5 for EST (UTC-5)
 
   const { col, cardTitle, weatherIcon, tempEl, windEl, humidityEl } = createForecastCard();
 
@@ -155,6 +149,20 @@ const renderSearchHistory = async (searchHistory: any) => {
 Helper Functions
 
 */
+
+const convertUTCToLocalTime = (utcDate: string, offset: number): string => {
+  const date = new Date(utcDate);
+  const localTime = new Date(date.getTime() + offset * 60 * 60 * 1000);
+  return localTime.toLocaleString('en-US', {
+    timeZone: 'UTC',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true
+  });
+};
 
 const createForecastCard = () => {
   const col = document.createElement('div');
