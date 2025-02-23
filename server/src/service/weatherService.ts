@@ -60,7 +60,7 @@ class WeatherService {
 
   private buildForecastArray(weatherData: any[]): Weather[] {
     // Filter the forecast data to get one entry per day
-    const dailyForecast = weatherData.filter((data: any, index: number) => index % 8 === 0);
+    const dailyForecast = weatherData.filter((_, index: number) => index % 8 === 0);
     return dailyForecast.map((data: any) => {
       return new Weather(
         data.main.temp,
