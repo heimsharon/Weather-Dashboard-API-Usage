@@ -49,7 +49,7 @@ const fetchSearchHistory = async () => {
   });
 
   const history = await response.json();
-  console.log('Search history:', history);
+  console.log('Search history:', history); // Log the search history
   return history;
 };
 
@@ -71,9 +71,7 @@ Render Functions
 const renderCurrentWeather = (currentWeather: any): void => {
   const { city, date, icon, iconDescription, tempF, windSpeed, humidity } = currentWeather;
 
-  const formattedDate = convertUTCToLocalTime(date, -5); // Example: -5 for EST (UTC-5)
-
-  heading.textContent = `${city} (${formattedDate})`;
+  heading.textContent = `${city} (${date})`;
   weatherIcon.setAttribute('src', `https://openweathermap.org/img/w/${icon}.png`);
   weatherIcon.setAttribute('alt', iconDescription);
   weatherIcon.setAttribute('class', 'weather-img');
@@ -103,6 +101,7 @@ const renderForecast = (forecast: any): void => {
     forecastContainer.append(headingCol);
   }
 
+  // Assuming forecast is an array of daily forecasts
   for (let i = 0; i < forecast.length; i++) {
     renderForecastCard(forecast[i]);
   }
@@ -111,17 +110,17 @@ const renderForecast = (forecast: any): void => {
 const renderForecastCard = (forecast: any) => {
   const { date, icon, iconDescription, tempF, windSpeed, humidity } = forecast;
 
-  const formattedDate = convertUTCToLocalTime(date, -5); // Example: -5 for EST (UTC-5)
-
   const { col, cardTitle, weatherIcon, tempEl, windEl, humidityEl } = createForecastCard();
 
   // Add content to elements
-  cardTitle.textContent = formattedDate;
+  cardTitle.textContent = date;
   weatherIcon.setAttribute('src', `https://openweathermap.org/img/w/${icon}.png`);
   weatherIcon.setAttribute('alt', iconDescription);
   tempEl.textContent = `Temp: ${tempF} °F`;
   windEl.textContent = `Wind: ${windSpeed} MPH`;
   humidityEl.textContent = `Humidity: ${humidity} %`;
+
+  col.append(cardTitle, weatherIcon, tempEl, windEl, humidityEl);
 
   if (forecastContainer) {
     forecastContainer.append(col);
@@ -129,18 +128,17 @@ const renderForecastCard = (forecast: any) => {
 };
 
 const renderSearchHistory = async (searchHistory: any) => {
-  const historyList = await searchHistory.json();
-
   if (searchHistoryContainer) {
     searchHistoryContainer.innerHTML = '';
 
-    if (!historyList.length) {
+    if (!searchHistory.length) {
       searchHistoryContainer.innerHTML = '<p class="text-center">No Previous Search History</p>';
+      return;
     }
 
     // * Start at end of history array and count down to show the most recent cities at the top.
-    for (let i = historyList.length - 1; i >= 0; i--) {
-      const historyItem = buildHistoryListItem(historyList[i]);
+    for (let i = searchHistory.length - 1; i >= 0; i--) {
+      const historyItem = buildHistoryListItem(searchHistory[i]);
       searchHistoryContainer.append(historyItem);
     }
   }
@@ -151,12 +149,6 @@ const renderSearchHistory = async (searchHistory: any) => {
 Helper Functions
 
 */
-
-const convertUTCToLocalTime = (utcDate: string, offset: number): string => {
-  const date = new Date(utcDate);
-  const localTime = new Date(date.getTime() + offset * 60 * 60 * 1000);
-  return localTime.toString(); // Display raw date/time data
-};
 
 const createForecastCard = () => {
   const col = document.createElement('div');

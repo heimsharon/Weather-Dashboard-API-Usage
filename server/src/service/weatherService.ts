@@ -59,7 +59,9 @@ class WeatherService {
   }
 
   private buildForecastArray(weatherData: any[]): Weather[] {
-    return weatherData.map((data: any) => {
+    // Filter the forecast data to get one entry per day
+    const dailyForecast = weatherData.filter((data: any, index: number) => index % 8 === 0);
+    return dailyForecast.map((data: any) => {
       return new Weather(
         data.main.temp,
         data.main.humidity,
@@ -78,7 +80,7 @@ class WeatherService {
     const coordinates = this.destructureLocationData(locationData);
     const weatherData = await this.fetchWeatherData(coordinates);
     const currentWeather = this.parseCurrentWeather(weatherData);
-    const forecast = this.buildForecastArray(weatherData.list.slice(1, 6));
+    const forecast = this.buildForecastArray(weatherData.list);
     return [currentWeather, ...forecast];
   }
 }
