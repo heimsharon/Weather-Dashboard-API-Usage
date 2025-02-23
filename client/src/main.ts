@@ -31,17 +31,25 @@ const fetchWeather = async (cityName: string) => {
 
   console.log('weatherData: ', weatherData);
 
+  if (weatherData.error) {
+    console.error('Error fetching weather data:', weatherData.error);
+    return;
+  }
+
   renderCurrentWeather(weatherData[0]);
   renderForecast(weatherData.slice(1));
 };
 
 const fetchSearchHistory = async () => {
-  const history = await fetch('/api/weather/history', {
+  const response = await fetch('/api/weather/history', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   });
+
+  const history = await response.json();
+  console.log('Search history:', history);
   return history;
 };
 

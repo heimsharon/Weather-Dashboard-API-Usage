@@ -10,6 +10,7 @@ router.post('/', async (req: Request, res: Response) => {
   console.log(`Received request for city: ${cityName}`);
   try {
     const weatherData = await WeatherService.getWeatherForCity(cityName);
+    console.log('Weather data retrieved:', weatherData);
     await HistoryService.addCity(cityName);
     res.json(weatherData);
   } catch (error) {
@@ -22,6 +23,7 @@ router.post('/', async (req: Request, res: Response) => {
 router.get('/history', async (_req: Request, res: Response) => {
   try {
     const cities = await HistoryService.getCities();
+    console.log('Search history retrieved:', cities);
     res.json(cities);
   } catch (error) {
     console.error('Error retrieving search history:', error);
@@ -34,6 +36,7 @@ router.delete('/history/:id', async (req: Request, res: Response) => {
   const { id } = req.params;
   try {
     await HistoryService.removeCity(id);
+    console.log(`City with id ${id} removed from search history`);
     res.json({ message: 'City removed from search history' });
   } catch (error) {
     console.error('Error removing city from search history:', error);
