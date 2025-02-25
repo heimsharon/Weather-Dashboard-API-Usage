@@ -300,7 +300,7 @@ h1 {
 
 h2 {
   font-size: 2rem;
-  color: #1a1a1a;
+  color: #0b0b0b;
 }
 
 h3 {
@@ -1073,6 +1073,7 @@ a:hover {
 .card {
   border: 1px solid #1a1a1a;
   margin-bottom: 1rem;
+  background-color: #2d3e50;
 }
 
 .card .card-header {
@@ -1331,7 +1332,7 @@ label form [type='radio'] {
   max-width: 100%;
 }
 
-/** COL SMALL
+/** col-sm
     ========================================================================= **/
 
 @media screen and (min-width: 640px) {
@@ -1453,7 +1454,7 @@ label form [type='radio'] {
   }
 }
 
-/** COLUMNS MEDIUM
+/** col-md
     =========================================================================  **/
 
 @media screen and (min-width: 768px) {
@@ -1575,7 +1576,7 @@ label form [type='radio'] {
   }
 }
 
-/** COLUMNS LARGE
+/** col-lg
     =========================================================================  **/
 @media screen and (min-width: 992px) {
   .col-md-auto {
@@ -1696,7 +1697,7 @@ label form [type='radio'] {
   }
 }
 
-/** COLUMNS EXTRA LARGE 
+/** col-xl
 ============================================================================== **/
 
 @media screen and (min-width: 1200px) {
