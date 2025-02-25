@@ -1815,11 +1815,6 @@ label form [type='radio'] {
 /** Weather APP SPECIFIC STYLES FOR COMPONENTS
     =========================================================================  **/
 
-/* Text color for the "Search for a city!" heading */
-#search-title {
-  color: rgb(13, 114, 107);
-}
-
 /* Styles for forecast cards */
 .forecast-card {
   position: relative; /* width: 20%; */
