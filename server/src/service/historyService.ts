@@ -11,13 +11,13 @@ const __dirname = path.dirname(__filename);
 class City {
   constructor(
     public name: string,
-    public id: string) { }
+    public id: string,
+  ) {}
 }
-// Defined HistoryService 
+// Defined HistoryService
 class HistoryService {
   private filePath = path.join(__dirname, '../db/db.json');
   private async ensureFileExists() {
-
     // Checks for a search history file, creates if it does not exist
     try {
       await fs.access(this.filePath);
@@ -53,7 +53,7 @@ class HistoryService {
   // Method that removes a city for the searchHistory.json file, allowing user to delete
   async removeCity(id: string): Promise<void> {
     let cities = await this.read();
-    cities = cities.filter(city => city.id !== id);
+    cities = cities.filter((city) => city.id !== id);
     await this.write(cities);
   }
 }

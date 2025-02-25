@@ -42,7 +42,9 @@ router.delete('/history/:id', async (req: Request, res: Response) => {
     res.json({ message: 'City removed from search history' });
   } catch (error) {
     console.error('Error removing city from search history:', error);
-    res.status(500).json({ error: 'Failed to remove city from search history' });
+    res
+      .status(500)
+      .json({ error: 'Failed to remove city from search history' });
   }
 });
 

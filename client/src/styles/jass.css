@@ -4,7 +4,7 @@
 /** DOCUMENT
     ========================================================================== **/
 
- /* 1. Correct the line height in all browsers
+/* 1. Correct the line height in all browsers
     2. Prevent adjustments of font size after orientation changes in iOS */
 html {
   line-height: 1.15; /* 1 */
@@ -60,7 +60,7 @@ a {
 /* 1. Remove the bottom border in Chrome 57-
    2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari */
 abbr[title] {
-  border-bottom: none; /* 1 */  /* 2 */
+  border-bottom: none; /* 1 */ /* 2 */
   text-decoration: underline dotted; /* 2 */
 }
 
@@ -128,7 +128,7 @@ textarea {
 /* Show the overflow in IE
    1. Show the overflow in Edge */
 button,
-input { 
+input {
   overflow: visible; /* 1 */
 }
 
@@ -136,7 +136,7 @@ input {
    1. Remove the inheritance of text transform in Firefox */
 button,
 select {
-   text-transform: none; /* 1 */
+  text-transform: none; /* 1 */
 }
 
 /* Correct the inability to style clickable types in iOS and Safari */
@@ -276,8 +276,9 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   font-size: 16px;
   color: #1a1a1a;
 }
@@ -789,27 +790,27 @@ a:hover {
     ========================================================================== **/
 
 .gap-0 {
-  gap: 0 !important
+  gap: 0 !important;
 }
 
 .gap-1 {
-  gap: .25rem !important
+  gap: 0.25rem !important;
 }
 
 .gap-2 {
-  gap: .5rem !important;
+  gap: 0.5rem !important;
 }
 
 .gap-3 {
-  gap: 1rem !important
+  gap: 1rem !important;
 }
 
 .gap-4 {
-  gap: 1.5rem !important
+  gap: 1.5rem !important;
 }
 
 .gap-5 {
-  gap: 3rem !important
+  gap: 3rem !important;
 }
 
 /**TEXT UTILITIES
@@ -944,7 +945,9 @@ a:hover {
   outline: none;
   color: #1a1a1a;
   background-color: #aeaeae;
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
 }
 
 .btn:hover {
@@ -1099,7 +1102,7 @@ a:hover {
 
 #today {
   color: #0f0f0e;
-  border: 2px solid #1a1a1a; 
+  border: 2px solid #1a1a1a;
 }
 form {
   width: 100%;
@@ -1452,7 +1455,7 @@ label form [type='radio'] {
 /** COLUMNS MEDIUM
     =========================================================================  **/
 
-  @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .col-md-auto {
     flex-grow: 1;
     flex-basis: 0;
@@ -1461,7 +1464,6 @@ label form [type='radio'] {
   .col-md-1 {
     flex: 0 0 8.33333%;
     max-width: 8.33333%;
-
 
     .col-md-2 {
       flex: 0 0 16.66667%;
@@ -1651,7 +1653,6 @@ label form [type='radio'] {
   .justify-flex-start-lg {
     justify-content: flex-start;
 
-
     .justify-flex-end-lg {
       justify-content: flex-end;
     }
@@ -1813,8 +1814,8 @@ label form [type='radio'] {
 
 /** Weather APP SPECIFIC STYLES FOR COMPONENTS
     =========================================================================  **/
-  
-/* Styles for forecast cards */    
+
+/* Styles for forecast cards */
 .forecast-card {
   position: relative; /* width: 20%; */
   padding-right: 15px;
@@ -1840,7 +1841,9 @@ label form [type='radio'] {
   outline: none;
   color: #1a1a1a;
   background-color: #757575;
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
 }
 
 /* Styles for search button */
@@ -1893,6 +1896,11 @@ body {
 /* Additional styles for better readability */
 .container {
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to the container */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Add a semi-transparent background to the container */
   border-radius: 10px;
 }
