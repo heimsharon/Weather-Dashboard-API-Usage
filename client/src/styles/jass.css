@@ -951,7 +951,7 @@ a:hover {
 }
 
 .btn:hover {
-  background-color: #cecece;
+  background-color: #318394;
 }
 
 .btn.btn-squared {
@@ -984,7 +984,7 @@ a:hover {
 }
 
 .btn.btn-danger {
-  background-color: #e64c66;
+  background-color: #c51e39;
   color: #ffffff;
 }
 
@@ -1077,7 +1077,7 @@ a:hover {
 .card .card-header {
   padding: 0.375rem;
   background-color: #2d3e50;
-  color: #d9e9e8;
+  color: #e0e714;
 }
 
 .card .card-body {
@@ -1815,6 +1815,11 @@ label form [type='radio'] {
 /** Weather APP SPECIFIC STYLES FOR COMPONENTS
     =========================================================================  **/
 
+/* Text color for the "Search for a city!" heading */
+#search-title {
+  color: rgb(13, 114, 107);
+}
+
 /* Styles for forecast cards */
 .forecast-card {
   position: relative; /* width: 20%; */
@@ -1840,7 +1845,7 @@ label form [type='radio'] {
   border: 1px solid transparent;
   outline: none;
   color: #1a1a1a;
-  background-color: #757575;
+  background-color: #bcb908;
   transition:
     color 0.2s ease-in-out,
     background-color 0.2s ease-in-out;
