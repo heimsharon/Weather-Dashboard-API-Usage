@@ -1156,6 +1156,9 @@ a:hover {
   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
 }
 
+#today {
+  color: #0f0f0e; 
+}
 form {
   width: 100%;
 }
@@ -1879,7 +1882,7 @@ label form [type='radio'] {
   border: 1px solid transparent;
   outline: none;
   color: #1a1a1a;
-  background-color: #aeaeae;
+  background-color: #757575;
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
@@ -1887,8 +1890,8 @@ label form [type='radio'] {
   /* text-align: inherit; */
   margin: 0.5rem;
   width: 100%;
-  background-color: #5098e6;
-  color: #d9e9e8;
+  background-color: #254d78;
+  color: #cad1d1;
 }
 
 .weather-search {
