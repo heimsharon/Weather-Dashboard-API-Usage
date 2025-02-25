@@ -74,8 +74,8 @@ const renderCurrentWeather = (currentWeather: any): void => {
   // Extract only the date part (YYYY-MM-DD) from the date string and format it
   const formattedDate = new Date(date).toLocaleDateString('en-US', {
     year: 'numeric',
-    month: 'long',
-    day: 'numeric'
+    month: '2-digit',
+    day: '2-digit'
   });
 
   heading.textContent = `${city} (${formattedDate})`;
@@ -122,8 +122,8 @@ const renderForecastCard = (forecast: any) => {
   // Extract only the date part (YYYY-MM-DD) from the date string and format it
   const formattedDate = new Date(date).toLocaleDateString('en-US', {
     year: 'numeric',
-    month: 'long',
-    day: 'numeric'
+    month: '2-digit',
+    day: '2-digit'
   });
 
   // Add content to elements
