@@ -1,3 +1,5 @@
+// This file defines API routes for retrieving weather data, managing search history, and deleting cities from the search history
+
 import { Router, type Request, type Response } from 'express';
 const router = Router();
 

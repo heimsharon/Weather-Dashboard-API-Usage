@@ -1,6 +1,8 @@
+// This file handles fetching weather data, rendering current and forecast weather, and managing search history
+
 import './styles/jass.css';
 
-// * All necessary DOM elements selected
+// Select all necessary DOM elements
 const searchForm: HTMLFormElement = document.getElementById('search-form') as HTMLFormElement;
 const searchInput: HTMLInputElement = document.getElementById('search-input') as HTMLInputElement;
 const todayContainer = document.querySelector('#today') as HTMLDivElement;
@@ -18,6 +20,7 @@ API Calls
 
 */
 
+// Fetch weather data for a given city
 const fetchWeather = async (cityName: string) => {
   const response = await fetch('/api/weather/', {
     method: 'POST',
@@ -40,6 +43,7 @@ const fetchWeather = async (cityName: string) => {
   renderForecast(weatherData.slice(1));
 };
 
+// Fetch search history from server
 const fetchSearchHistory = async () => {
   const response = await fetch('/api/weather/history', {
     method: 'GET',
@@ -49,10 +53,13 @@ const fetchSearchHistory = async () => {
   });
 
   const history = await response.json();
-  console.log('Search history:', history); // Log the search history
+
+  // Log the search history
+  console.log('Search history:', history);
   return history;
 };
 
+// Delete a city from the search history
 const deleteCityFromHistory = async (id: string) => {
   await fetch(`/api/weather/history/${id}`, {
     method: 'DELETE',
@@ -68,10 +75,11 @@ Render Functions
 
 */
 
+// Render current weather data
 const renderCurrentWeather = (currentWeather: any): void => {
   const { city, date, icon, iconDescription, tempF, windSpeed, humidity } = currentWeather;
 
-  // Extract only the date part (YYYY-MM-DD) from the date string and format it
+  // Extract only the date part (YYYY-MM-DD) from the date string and format it to (MM-DD_YYY)
   const formattedDate = new Date(date).toLocaleDateString('en-US', {
     year: 'numeric',
     month: '2-digit',
@@ -93,8 +101,10 @@ const renderCurrentWeather = (currentWeather: any): void => {
   }
 };
 
+// Render 5-day weather forecast
 const renderForecast = (forecast: any): void => {
-  console.log('Forecast data:', forecast); // Log the forecast data
+  // Log the forecast data
+  console.log('Forecast data:', forecast);
 
   const headingCol = document.createElement('div');
   const heading = document.createElement('h4');
@@ -113,7 +123,7 @@ const renderForecast = (forecast: any): void => {
     renderForecastCard(forecast[i]);
   }
 };
-
+// Rendering each forecast card
 const renderForecastCard = (forecast: any) => {
   const { date, icon, iconDescription, tempF, windSpeed, humidity } = forecast;
 
@@ -130,12 +140,13 @@ const renderForecastCard = (forecast: any) => {
   cardTitle.textContent = formattedDate;
   weatherIcon.setAttribute('src', `https://openweathermap.org/img/w/${icon}.png`);
   weatherIcon.setAttribute('alt', iconDescription);
-  weatherIcon.classList.add('weather-img'); // Ensure the class is added
+  weatherIcon.classList.add('weather-img');
   tempEl.textContent = `Temp: ${tempF} °F`;
   windEl.textContent = `Wind: ${windSpeed} MPH`;
   humidityEl.textContent = `Humidity: ${humidity} %`;
 
-  cardBody.append(cardTitle, weatherIcon, tempEl, windEl, humidityEl); // Append elements to card body
+  // Append elements to card body
+  cardBody.append(cardTitle, weatherIcon, tempEl, windEl, humidityEl);
 
   col.append(card);
 
@@ -144,6 +155,7 @@ const renderForecastCard = (forecast: any) => {
   }
 };
 
+// Render search history
 const renderSearchHistory = async (searchHistory: any) => {
   if (searchHistoryContainer) {
     searchHistoryContainer.innerHTML = '';
@@ -153,7 +165,7 @@ const renderSearchHistory = async (searchHistory: any) => {
       return;
     }
 
-    // * Start at end of history array and count down to show the most recent cities at the top.
+    // Start at end of history array and count down to show the most recent cities at the top
     for (let i = searchHistory.length - 1; i >= 0; i--) {
       const historyItem = buildHistoryListItem(searchHistory[i]);
       searchHistoryContainer.append(historyItem);
@@ -167,6 +179,7 @@ Helper Functions
 
 */
 
+// Create a forecast card
 const createForecastCard = () => {
   const col = document.createElement('div');
   const card = document.createElement('div');
@@ -201,6 +214,7 @@ const createForecastCard = () => {
   };
 };
 
+// Create history buttons for each city searched (search history)
 const createHistoryButton = (city: string) => {
   const btn = document.createElement('button');
   btn.setAttribute('type', 'button');
@@ -211,6 +225,7 @@ const createHistoryButton = (city: string) => {
   return btn;
 };
 
+// Delate button for each city listed in the search history
 const createDeleteButton = () => {
   const delBtnEl = document.createElement('button');
   delBtnEl.setAttribute('type', 'button');
@@ -220,12 +235,14 @@ const createDeleteButton = () => {
   return delBtnEl;
 };
 
+// Create div for search history
 const createHistoryDiv = () => {
   const div = document.createElement('div');
   div.classList.add('display-flex', 'gap-2', 'col-12', 'm-1');
   return div;
 };
 
+// Build a history list item
 const buildHistoryListItem = (city: any) => {
   const newBtn = createHistoryButton(city.name);
   const deleteBtn = createDeleteButton();
@@ -241,6 +258,7 @@ Event Handlers
 
 */
 
+// Handle search button click
 const handleSearchFormSubmit = (event: any): void => {
   event.preventDefault();
 
@@ -255,6 +273,7 @@ const handleSearchFormSubmit = (event: any): void => {
   searchInput.value = '';
 };
 
+// Handle searched city history button click
 const handleSearchHistoryClick = (event: any) => {
   if (event.target.matches('.history-btn')) {
     const city = event.target.textContent;
@@ -262,6 +281,7 @@ const handleSearchHistoryClick = (event: any) => {
   }
 };
 
+// Handle delete searched city button click
 const handleDeleteHistoryClick = (event: any) => {
   event.stopPropagation();
   const cityID = JSON.parse(event.target.getAttribute('data-city')).id;
@@ -274,9 +294,12 @@ Initial Render
 
 */
 
+// Fetch and render search history
 const getAndRenderHistory = () => fetchSearchHistory().then(renderSearchHistory);
 
+//Add event listeners
 searchForm?.addEventListener('submit', handleSearchFormSubmit);
 searchHistoryContainer?.addEventListener('click', handleSearchHistoryClick);
 
+// Initial render of search history
 getAndRenderHistory();

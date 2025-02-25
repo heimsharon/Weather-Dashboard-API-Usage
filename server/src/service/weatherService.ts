@@ -1,14 +1,16 @@
+// This file defines API routes for retrieving weather data, managing search history, and deleting  cities from the search history
+
 import dotenv from "dotenv";
 import fetch from "node-fetch";
 dotenv.config();
 
 
-//Interface for Coordinates Object.
+// Interface for Coordinates Object 
 interface Coordinates {
   lat: number;
   lon: number;
 }
-//Defined class of Weather Object.
+// Defined class of Weather Object
 class Weather {
   constructor(
     public tempF: number,
@@ -21,21 +23,22 @@ class Weather {
   ) { }
 }
 
-//Service for fetching and processing weather data.
+// Service for fetching and processing weather data
 class WeatherService {
-  private baseURL: string = process.env.API_BASE_URL || ""; //Base URL for the weather API.
-  private apiKey: string = process.env.API_KEY || ""; //API key for the weather API.
-  private cityName: string = ""; //City name for the weather data.
+  private baseURL: string = process.env.API_BASE_URL || ""; // Base URL for the weather API
+  private apiKey: string = process.env.API_KEY || ""; // API key for the weather API
+  private cityName: string = ""; // City name for the weather data
 
-  //Fetch location data for a given query (city name).
+  // Fetch location data for a given query (city name)
   private async fetchLocationData(query: string): Promise<any> {
     const response = await fetch(
       `${this.baseURL}/geo/1.0/direct?q=${query}&limit=1&appid=${this.apiKey}`
     );
+    
     return response.json();
   }
 
-  //Convert location data into coordinates (latitude and longitude).
+  // Convert location data into coordinates (latitude and longitude)
   private destructureLocationData(locationData: any): Coordinates {
     return {
       lat: locationData[0].lat,
@@ -43,18 +46,18 @@ class WeatherService {
     };
   }
 
-  //Build the weather query URL using coordinates.
+  // Build the weather query URL using coordinates
   private buildWeatherQuery(coordinates: Coordinates): string {
     return `${this.baseURL}/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${this.apiKey}&units=imperial`;
   }
 
-  //Fetching weather data using coordinates.
+  // Fetching weather data using coordinates
   private async fetchWeatherData(coordinates: Coordinates): Promise<any> {
     const response = await fetch(this.buildWeatherQuery(coordinates));
     return response.json();
   }
 
-  //Parse the current weather data from the API response.
+  // Parse the current weather data from the API response
   private parseCurrentWeather(response: any): Weather {
     const currentWeather = response.list[0];
     return new Weather(
@@ -68,7 +71,7 @@ class WeatherService {
     );
   }
 
-  //Build an array of Weather objects for the 5-day forecast.
+  // Build an array of Weather objects for the 5-day forecast
   private buildForecastArray(weatherData: any[]): Weather[] {
     const dailyForecast = weatherData.filter(
       (_, index: number) => index % 8 === 0
@@ -85,7 +88,7 @@ class WeatherService {
       );
     });
   }
-  //Get weather data for a specific city (combining all methods into a single server request).
+  // Get weather data for a specific city (combining all methods into a single server request)
   async getWeatherForCity(city: string): Promise<Weather[]> {
     this.cityName = city;
     const locationData = await this.fetchLocationData(city);

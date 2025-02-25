@@ -1,4 +1,5 @@
 //This file sets up the API routes for the weather-related endpoints.
+
 import { Router } from 'express';
 const router = Router();
 
