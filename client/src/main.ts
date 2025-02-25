@@ -137,6 +137,8 @@ const renderForecast = (forecast: any): void => {
   heading.textContent = '5-Day Forecast:';
   headingCol.append(heading);
 
+  heading.classList.add('forecast-heading');
+
   if (forecastContainer) {
     forecastContainer.innerHTML = '';
     forecastContainer.append(headingCol);

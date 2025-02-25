@@ -1077,7 +1077,7 @@ a:hover {
 .card .card-header {
   padding: 0.375rem;
   background-color: #2d3e50;
-  color: #f1f1eb;
+  color: #f0f01f;
 }
 
 .card .card-body {
@@ -1903,4 +1903,7 @@ body {
     0.5
   ); /* Add a semi-transparent background to the container */
   border-radius: 10px;
+}
+.forecast-heading {
+  color: yellow;
 }
