@@ -1916,3 +1916,19 @@ label form [type='radio'] {
   background: -moz-linear-gradient(right, #20084a, #3463bc);
   background: linear-gradient(to left, #20084a, #3463bc);
 }
+/* Set the background image for the entire body */
+body {
+  background-image: url('https://www.saga.co.uk/contentlibrary/saga/publishing/verticals/technology/apps/shutterstock_240459751.jpg');
+  background-size: cover; /* Ensure the image covers the entire background */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center center; /* Center the image */
+  background-attachment: fixed; /* Make the background image fixed */
+  color: white; /* Set the text color to white for better contrast */
+}
+
+/* Additional styles for better readability */
+.container {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to the container */
+  border-radius: 10px;
+}
