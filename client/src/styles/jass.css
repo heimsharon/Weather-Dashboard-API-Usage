@@ -984,7 +984,7 @@ a:hover {
 }
 
 .btn.btn-danger {
-  background-color: #c51e39;
+  background-color: #8f0b21;
   color: #ffffff;
 }
 
@@ -1077,7 +1077,7 @@ a:hover {
 .card .card-header {
   padding: 0.375rem;
   background-color: #2d3e50;
-  color: #e0e714;
+  color: #f1f1eb;
 }
 
 .card .card-body {
@@ -1840,7 +1840,7 @@ label form [type='radio'] {
   border: 1px solid transparent;
   outline: none;
   color: #1a1a1a;
-  background-color: #bcb908;
+  background-color: #f6e339;
   transition:
     color 0.2s ease-in-out,
     background-color 0.2s ease-in-out;
