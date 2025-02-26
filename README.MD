@@ -1,5 +1,5 @@
  
-  # Weather Dashboard
+  # Weather Dashboard - API Usage
   
   ## Description
   
