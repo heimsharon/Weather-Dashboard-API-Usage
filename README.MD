@@ -11,6 +11,7 @@ The Weather Dashboard is a web application that provides users with real-time we
 * Display of temperature, wind speed, and humidity. 
 * Able to store a list of searched cities.
 
+
 ## Table of Contents
 
 - [Description/Features](#description)
@@ -21,6 +22,7 @@ The Weather Dashboard is a web application that provides users with real-time we
 - [License](#license)
 - [Media](#media)
     
+
 ## Installation
 
 Before running the application, you need to install the necessary packages. Follow these steps:
@@ -46,7 +48,7 @@ To initialize the application:
   
 3. For development mode (run both the client and server) use the command-line command:
   
-  ```npm run start:dev```
+   ```npm run start:dev```
 
 
 ## Deployment
@@ -61,15 +63,13 @@ Render was used for development during creation. You can access it at Live URL. 
 
 4. Deploy the application.
 
-## Contributing
-
-Contributions are welcome! You can submit a pull request or open an issue for any bugs or feature request.
 
 ## License
 
 This project is licensed under the MIT license.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
+
 
 ## Media
 
