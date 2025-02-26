@@ -1824,6 +1824,7 @@ label form [type='radio'] {
   padding-right: 15px;
   padding-left: 15px;
   border-radius: 6px;
+  background-color: #254d78;
 }
 
 /* Styles for the weather images */
