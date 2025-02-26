@@ -3,15 +3,17 @@
   
   ## Description
   
- The Weather Dashboard is a web application that provides users with real-time weather information along with a 5-day forecast for cities worldwide. Users can search for a city to retrieve data, including temperature, wind speed, and humidity. The application uses Express to communicate with the weather API and can be deployed in any environment. During creation, Render was used as the testing environment.
+  The Weather Dashboard is a web application that provides users with real-time weather information along with a 5-day forecast for cities worldwide. Users can search for a city to retrieve data, including temperature, wind speed, and humidity. The application uses [Express](https://expressjs.com/) to communicate with the weather API and can be deployed in any environment. During creation, Render was used as the testing environment. The application is built with Node.js and utilizes the OpenWeather API for weather data.
   
   ## Features
-   * Real-time current weather data and the 5-Day Forecast.
-   * Search functionality by cities.
-   * Display of temperature, wind speed, and humidity. 
-   * Able to store a list of searched cities.
+
+  * Real-time current weather data and the 5-Day Forecast.
+  * Search functionality by cities.
+  * Display of temperature, wind speed, and humidity. 
+  * Able to store a list of searched cities.
 
   ## Table of Contents
+
   - [Description/Features](#description)
   - [Installation](#installation)
   - [Usage](#usage)
@@ -22,25 +24,41 @@
     
   ## Installation
   
-  To install the necessary packages, follow these steps before running the application:
+  Before running the application, you need to install the necessary packages. Follow these steps:
+
+    1. Ensure you have [Node.js](https://nodejs.org/) and npm installed.
+    2. Clone the repository and navigate to the project directory.
+    3. Install the dependencies using the command-line command:
   
-  Type the command `npm install`.
+     `npm install`.
   
   ## Usage
 
   To initialize the application:
- 
-  Type the command `npm start`.
 
-  Type the command `npm run start:dev` to run both the client and server in development mode.
+    1. You will need to set up an account OpenWeather API in order to get a APIKey to access thee openweather API. Be sure to update the environment variable in the `.env` file with your key.
+
+    2. Start the server with the command-line command:
+
+     `npm start`
+ 
+ 
+    3. For development mode (run both the client and server) use the command-line command"
+
+      `npm run start:dev`
 
   ## Deployment
 
-  Render was used for development during creation. You can access it at [Live URL](https://render.com/). However, the application is set up to run in any deployment environment.
+  Render was used for development during creation. You can access it at [Live URL](https://render.com/). However, the application is set up to run in any deployment environment. To deploy the application to Render, follow these steps:
+
+    1. Create a new web service on Render.
+    2. Connect your GitHub repository.
+    3. Set the environment variables, including your OpenWeather API key.
+    4. Deploy the application.
   
   ## Contributing
 
-  Contributions are welcome! Please open an issue or submit a pull request.
+  Contributions are welcome! You can submit a pull request or open an issue for any bugs or feature request.
 
   ## License
   
