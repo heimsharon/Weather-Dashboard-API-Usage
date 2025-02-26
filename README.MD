@@ -42,11 +42,11 @@ To initialize the application:
 
 2. Start the server with the command-line command:
   
- ```npm start```
+   ```npm start```
   
 3. For development mode (run both the client and server) use the command-line command:
   
- ```npm run start:dev```
+  ```npm run start:dev```
 
 
 ## Deployment
