@@ -24,7 +24,7 @@ The Weather Dashboard is a web application that provides users with real-time we
 ## Installation
   
 Before running the application, you need to install the necessary packages. Follow these steps:
-
+   ````markdown
      1. Ensure you have [Node.js](https://nodejs.org/) and npm installed.
      2. Clone the repository and navigate to the project directory.
      3. Install the dependencies using the command-line command:
