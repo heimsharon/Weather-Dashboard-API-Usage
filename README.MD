@@ -52,7 +52,7 @@
 
   ### Screenshot
   
-  ![Weather Dashboard Screenshot](assets/screenshot.png)
+  ![Weather Dashboard Screenshot](Assets/Weather-Dash-Board-Demo.png)
 
   ### Video
 
