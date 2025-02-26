@@ -25,11 +25,11 @@ The Weather Dashboard is a web application that provides users with real-time we
 
 Before running the application, you need to install the necessary packages. Follow these steps:
   
--1. Ensure you have [Node.js](https://nodejs.org/) and npm   installed.
+1. Ensure you have [Node.js](https://nodejs.org/) and npm   installed.
   
--2. Clone the repository and navigate to the project directory.
+2. Clone the repository and navigate to the project directory.
     
--3. Install the dependencies using the command-line command:
+3. Install the dependencies using the command-line command:
  
    ```npm install```
    
@@ -38,13 +38,13 @@ Before running the application, you need to install the necessary packages. Foll
 
 To initialize the application:
 
--1. You will need to set up an account OpenWeather API in order to get an APIKey to access the OpenWeather API. Be sure to update the environment variable in the ```.env``` file with your key.
+1. You will need to set up an account OpenWeather API in order to get an APIKey to access the OpenWeather API. Be sure to update the environment variable in the ```.env``` file with your key.
 
--2. Start the server with the command-line command:
+2. Start the server with the command-line command:
   
  ```npm start```
   
--3. For development mode (run both the client and server) use the command-line command:
+3. For development mode (run both the client and server) use the command-line command:
   
    ``` npm run start:dev```
 
@@ -53,13 +53,13 @@ To initialize the application:
 
 Render was used for development during creation. You can access it at Live URL. However, the application is set up to run in any deployment environment. To deploy the application to Render, follow these steps:
 
--1. Create a new web service on Render.
+1. Create a new web service on Render.
 
--2. Connect your GitHub repository.
+2. Connect your GitHub repository.
 
--3. Set the environment variables, including your OpenWeather ```API key.```
+3. Set the environment variables, including your OpenWeather ```API key.```
 
--4. Deploy the application.
+4. Deploy the application.
 
 ## Contributing
 
