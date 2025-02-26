@@ -28,7 +28,7 @@ Before running the application, you need to install the necessary packages. Foll
      1. Ensure you have [Node.js](https://nodejs.org/) and npm installed.
      2. Clone the repository and navigate to the project directory.
      3. Install the dependencies using the command-line command:
-  
+  ```
    ```sh
    npm install
    ```
