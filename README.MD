@@ -6,13 +6,13 @@ The Weather Dashboard is a web application that provides real-time weather data 
   
 ## Features
 
-* Real-time current weather data and the 5-Day Forecast.
+* Real-time current weather data and the 5-Day Forecast
 
-* Search functionality fpr global locations.
+* Search functionality for global locations
 
-* Displays temperature, wind speed, and humidity.
+* Displays temperature, wind speed, and humidity
 
-* Stores previously searched cities for quick access.
+* Stores previously searched cities for quick access
 
 
 ## Table of Contents
@@ -43,15 +43,15 @@ Before running the application,follow these steps:
 
 To initialize the application:
 
-1. Create an account on the [OpenWeather API](https://openweathermap.org/api) to get an APIKey to access the OpenWeather API.
+1. Create an account at [OpenWeather API](https://openweathermap.org/api) to receive an ```APIKey``` to access the OpenWeather API server.
 
-2. Add your API Key to a ```.env``` file in the project root directory.
+2. Add your API Key to a ```.env``` file in the projects root directory.
 
-3. Start the application with the command-line command:
+3. Start the application with in the command-line command:
   
    ```npm start```
   
-3. For development mode (run both the client and server) use the command-line command:
+3. (Optional) For development mode (run both the client and server) use:
   
    ```npm run start:dev```
 
