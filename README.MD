@@ -1,15 +1,18 @@
 # Weather Dashboard - API Usage
   
 ## Description
-  
-The Weather Dashboard is a web application that provides users with real-time weather information along with a 5-day forecast for cities worldwide. Users can search for a city to retrieve data, including temperature, wind speed, and humidity. The application uses [Express](https://expressjs.com/) to communicate with the weather API and can be deployed in any environment. During creation, Render was used as the testing environment. The application is built with Node.js and utilizes the OpenWeather API for weather data.
+
+The Weather Dashboard is a web application that provides real-time weather data and a 5-day forecast for cities worldwide. Users can search for a city to view details such as temperature, wind speed, and humidity. The application is built with [Node.js](https://nodejs.org/en) and utilizes the [OpenWeather API](https://openweathermap.org/api) for weather data. It uses [Express](https://expressjs.com/) for API communication and was tested using [Render](https://render.com/), though it can be deployed in any environment.
   
 ## Features
 
 * Real-time current weather data and the 5-Day Forecast.
-* Search functionality by cities.
-* Display of temperature, wind speed, and humidity. 
-* Able to store a list of searched cities.
+
+* Search functionality fpr global locations.
+
+* Displays temperature, wind speed, and humidity.
+
+* Stores previously searched cities for quick access.
 
 
 ## Table of Contents
@@ -25,9 +28,9 @@ The Weather Dashboard is a web application that provides users with real-time we
 
 ## Installation
 
-Before running the application, you need to install the necessary packages. Follow these steps:
+Before running the application,follow these steps:
   
-1. Ensure you have [Node.js](https://nodejs.org/) and npm   installed.
+1. Ensure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
   
 2. Clone the repository and navigate to the project directory.
     
@@ -40,9 +43,11 @@ Before running the application, you need to install the necessary packages. Foll
 
 To initialize the application:
 
-1. You will need to set up an account OpenWeather API in order to get an APIKey to access the OpenWeather API. Be sure to update the environment variable in the ```.env``` file with your key.
+1. Create an account on the [OpenWeather API](https://openweathermap.org/api) to get an APIKey to access the OpenWeather API.
 
-2. Start the server with the command-line command:
+2. Add your API Key to a ```.env``` file in the project root directory.
+
+3. Start the application with the command-line command:
   
    ```npm start```
   
@@ -53,15 +58,17 @@ To initialize the application:
 
 ## Deployment
 
-Render was used for development during creation. You can access it at Live URL. However, the application is set up to run in any deployment environment. To deploy the application to Render, follow these steps:
+The application was tested on Render, but it can be deployed in any environment. To deploy on Render, follow these steps:
 
-1. Create a new web service on Render.
+1. Create a new web service on [Render](https://render.com/).
 
 2. Connect your GitHub repository.
 
-3. Set the environment variables, including your OpenWeather ```API key.```
+3. Set up environment variables, including your OpenWeather ```API key.```
 
-4. Deploy the application.
+4. Click ```Deploy```
+
+5. Once deployed, access your app at the provided Render URL.
 
 
 ## License
