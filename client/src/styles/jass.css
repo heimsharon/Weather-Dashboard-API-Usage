@@ -312,7 +312,7 @@ body {
 
 /* Set the background image for the entire body*/
 body {
-  background-image: url('../assets/images/weather-bg.jpg');
+  background-image: url('../../public/weather-background.jpg');
   background-size: cover;
   /* Ensure the image covers the entire background */
   background-repeat: no-repeat;
