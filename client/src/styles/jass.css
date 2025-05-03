@@ -1,14 +1,16 @@
-/** Normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css **/
+/** Normalize.css v8.0.1 | MIT License | github.com/nicolas/normalize.css **/
 /*!Makes adjustments based of users browser/device to "Normalize"./
 
 /** DOCUMENT
     ========================================================================== **/
 
-/* 1. Correct the line height in all browsers
+/*  1. Correct the line height in all browsers
     2. Prevent adjustments of font size after orientation changes in iOS */
 html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
 }
 
 /** SECTIONS
@@ -37,16 +39,21 @@ h1 {
 /* 1. Add the correct box sizing in Firefox
    2. Show the overflow in Edge and IE */
 hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
 }
 
 /* 1. Correct the inheritance and scaling of font size in all browsers
    2. Correct the odd `em` font sizing in all browsers */
 pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
 }
 
 /** TEXT-LEVEL SEMANTICS
@@ -60,8 +67,11 @@ a {
 /* 1. Remove the bottom border in Chrome 57-
    2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari */
 abbr[title] {
-  border-bottom: none; /* 1 */ /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  border-bottom: none;
+  /* 1 */
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
 }
 
 /* Add the correct font weight in Chrome, Edge, and Safari */
@@ -75,8 +85,10 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
 }
 
 /* Add the correct font size in all browsers */
@@ -119,24 +131,30 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
 }
 
 /* Show the overflow in IE
    1. Show the overflow in Edge */
 button,
 input {
-  overflow: visible; /* 1 */
+  overflow: visible;
+  /* 1 */
 }
 
 /* Remove the inheritance of text transform in Edge, Firefox, and IE
    1. Remove the inheritance of text transform in Firefox */
 button,
 select {
-  text-transform: none; /* 1 */
+  text-transform: none;
+  /* 1 */
 }
 
 /* Correct the inability to style clickable types in iOS and Safari */
@@ -162,7 +180,8 @@ button:-moz-focusring,
 [type='button']:-moz-focusring,
 [type='reset']:-moz-focusring,
 [type='submit']:-moz-focusring {
-  outline: 1px dotted ButtonText;
+  outline: 2px solid #005fcc; /* Use a solid color for better visibility */
+  outline-offset: 2px; /* Add spacing between the outline and the element */
 }
 
 /* Correct the padding in Firefox */
@@ -170,17 +189,23 @@ fieldset {
   padding: 0.35em 0.75em 0.625em;
 }
 
-/* 1. Correct the text wrapping in Edge and IE
-   2. Correct the color inheritance from `fieldset` elements in IE
-   3. Remove the padding so developers are not caught out when they zero out
+/*  1. Correct the text wrapping in Edge and IE
+    2. Correct the color inheritance from `fieldset` elements in IE
+    3. Remove the padding so developers are not caught out when they zero out
       `fieldset` elements in all browsers */
 legend {
-  box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  white-space: normal; /* 1 */
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
 }
 
 /* Add the correct vertical alignment in Chrome, Firefox, and Opera */
@@ -197,8 +222,10 @@ textarea {
    2. Remove the padding in IE 10 */
 [type='checkbox'],
 [type='radio'] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
 }
 
 /* Correct the cursor style of increment and decrement buttons in Chrome */
@@ -207,12 +234,14 @@ textarea {
   height: auto;
 }
 
-/* 1. Correct the odd appearance in Chrome and Safari.
-   2. Correct the outline style in Safari.*/
+/*  1. Correct the odd appearance in Chrome and Safari.
+    2. Correct the outline style in Safari.*/
 [type='search'] {
   -webkit-appearance: textfield;
-  appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+  appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
 }
 
 /* Remove the inner padding in Chrome and Safari on macOS.*/
@@ -220,11 +249,13 @@ textarea {
   -webkit-appearance: none;
 }
 
-/* 1. Correct the inability to style clickable types in iOS and Safari.
-   2. Change font properties to `inherit` in Safari.*/
+/*  1. Correct the inability to style clickable types in iOS and Safari.
+    2. Change font properties to `inherit` in Safari.*/
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
 }
 
 /** INTERACTIVE
@@ -270,10 +301,6 @@ template {
 html,
 body {
   min-height: 100%;
-}
-
-/* Set default font and background for the body*/
-body {
   margin: 0;
   padding: 0;
   font-family:
@@ -283,19 +310,26 @@ body {
   color: #1a1a1a;
 }
 
-/* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0 0 0.5rem;
-  line-height: 1.25;
+/* Set the background image for the entire body*/
+body {
+  background-image: url('../assets/images/weather-bg.jpg');
+  background-size: cover;
+  /* Ensure the image covers the entire background */
+  background-repeat: no-repeat;
+  /* Prevent the image from repeating */
+  background-position: center center;
+  /* Center the image */
+  background-attachment: fixed;
+  /* Make the background image fixed */
+  color: white;
+  /* Set the text color to white for better contrast */
 }
 
+/* Headings */
 h1 {
   font-size: 2.25rem;
+  margin: 0 0 0.5rem;
+  line-height: 1.25;
 }
 
 h2 {
@@ -787,7 +821,7 @@ a:hover {
   padding-bottom: 1.625rem;
 }
 
-/** Gap UTILITIES 
+/** Gap UTILITIES
     ========================================================================== **/
 
 .gap-0 {
@@ -1106,6 +1140,7 @@ a:hover {
   color: #0f0f0e;
   border: 2px solid #1a1a1a;
 }
+
 form {
   width: 100%;
 }
@@ -1166,12 +1201,10 @@ label form [type='radio'] {
 .container {
   width: 85%;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.container.container-fluid {
-  width: 92%;
+  margin: auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
 /** FLEXBOX CONTENT
@@ -1466,113 +1499,113 @@ label form [type='radio'] {
   .col-md-1 {
     flex: 0 0 8.33333%;
     max-width: 8.33333%;
+  }
 
-    .col-md-2 {
-      flex: 0 0 16.66667%;
-      max-width: 16.66667%;
-    }
+  .col-md-2 {
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+  }
 
-    .col-md-3 {
-      flex: 0 0 25%;
-      max-width: 25%;
-    }
+  .col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
 
-    .col-md-4 {
-      flex: 0 0 33.33333%;
-      max-width: 33.33333%;
-    }
+  .col-md-4 {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+  }
 
-    .col-md-5 {
-      flex: 0 0 41.66667%;
-      max-width: 41.66667%;
-    }
+  .col-md-5 {
+    flex: 0 0 41.66667%;
+    max-width: 41.66667%;
+  }
 
-    .col-md-6 {
-      flex: 0 0 50%;
-      max-width: 50%;
-    }
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
 
-    .col-md-7 {
-      flex: 0 0 58.33333%;
-      max-width: 58.33333%;
-    }
+  .col-md-7 {
+    flex: 0 0 58.33333%;
+    max-width: 58.33333%;
+  }
 
-    .col-md-8 {
-      flex: 0 0 66.66667%;
-      max-width: 66.66667%;
-    }
+  .col-md-8 {
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+  }
 
-    .col-md-9 {
-      flex: 0 0 75%;
-      max-width: 75%;
-    }
+  .col-md-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
 
-    .col-md-10 {
-      flex: 0 0 83.33333%;
-      max-width: 83.33333%;
-    }
+  .col-md-10 {
+    flex: 0 0 83.33333%;
+    max-width: 83.33333%;
+  }
 
-    .col-md-11 {
-      flex: 0 0 91.66667%;
-      max-width: 91.66667%;
-    }
+  .col-md-11 {
+    flex: 0 0 91.66667%;
+    max-width: 91.66667%;
+  }
 
-    .col-md-12 {
-      flex: 0 0 100%;
-      max-width: 100%;
-    }
+  .col-md-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 
-    .justify-space-between-md {
-      justify-content: space-between;
-    }
+  .justify-space-between-md {
+    justify-content: space-between;
+  }
 
-    .justify-space-around-md {
-      justify-content: space-around;
-    }
+  .justify-space-around-md {
+    justify-content: space-around;
+  }
 
-    .justify-flex-start-md {
-      justify-content: flex-start;
-    }
+  .justify-flex-start-md {
+    justify-content: flex-start;
+  }
 
-    .justify-flex-end-md {
-      justify-content: flex-end;
-    }
+  .justify-flex-end-md {
+    justify-content: flex-end;
+  }
 
-    .justify-center-md {
-      justify-content: center;
-    }
+  .justify-center-md {
+    justify-content: center;
+  }
 
-    .align-start-md {
-      align-items: flex-start;
-    }
+  .align-start-md {
+    align-items: flex-start;
+  }
 
-    .align-stretch-md {
-      align-items: stretch;
-    }
+  .align-stretch-md {
+    align-items: stretch;
+  }
 
-    .align-end-md {
-      align-items: flex-end;
-    }
+  .align-end-md {
+    align-items: flex-end;
+  }
 
-    .align-center-md {
-      align-items: center;
-    }
+  .align-center-md {
+    align-items: center;
+  }
 
-    .align-content-start-md {
-      align-content: flex-start;
-    }
+  .align-content-start-md {
+    align-content: flex-start;
+  }
 
-    .align-content-stretch-md {
-      align-content: stretch;
-    }
+  .align-content-stretch-md {
+    align-content: stretch;
+  }
 
-    .align-content-end-md {
-      align-content: flex-end;
-    }
+  .align-content-end-md {
+    align-content: flex-end;
+  }
 
-    .align-content-center-md {
-      align-content: center;
-    }
+  .align-content-center-md {
+    align-content: center;
   }
 }
 
@@ -1654,46 +1687,46 @@ label form [type='radio'] {
 
   .justify-flex-start-lg {
     justify-content: flex-start;
+  }
 
-    .justify-flex-end-lg {
-      justify-content: flex-end;
-    }
+  .justify-flex-end-lg {
+    justify-content: flex-end;
+  }
 
-    .justify-center-lg {
-      justify-content: center;
-    }
+  .justify-center-lg {
+    justify-content: center;
+  }
 
-    .align-start-lg {
-      align-items: flex-start;
-    }
+  .align-start-lg {
+    align-items: flex-start;
+  }
 
-    .align-stretch-lg {
-      align-items: stretch;
-    }
+  .align-stretch-lg {
+    align-items: stretch;
+  }
 
-    .align-end-lg {
-      align-items: flex-end;
-    }
+  .align-end-lg {
+    align-items: flex-end;
+  }
 
-    .align-center-lg {
-      align-items: center;
-    }
+  .align-center-lg {
+    align-items: center;
+  }
 
-    .align-content-start-lg {
-      align-content: flex-start;
-    }
+  .align-content-start-lg {
+    align-content: flex-start;
+  }
 
-    .align-content-stretch-lg {
-      align-content: stretch;
-    }
+  .align-content-stretch-lg {
+    align-content: stretch;
+  }
 
-    .align-content-end-lg {
-      align-content: flex-end;
-    }
+  .align-content-end-lg {
+    align-content: flex-end;
+  }
 
-    .align-content-center-lg {
-      align-content: center;
-    }
+  .align-content-center-lg {
+    align-content: center;
   }
 }
 
@@ -1819,9 +1852,8 @@ label form [type='radio'] {
 
 /* Styles for forecast cards */
 .forecast-card {
-  position: relative; /* width: 20%; */
-  padding-right: 15px;
-  padding-left: 15px;
+  position: relative;
+  padding: 15px;
   border-radius: 6px;
   background-color: #254d78;
 }
@@ -1836,7 +1868,7 @@ label form [type='radio'] {
 .history-btn {
   text-align: center;
   display: inline-block;
-  padding: 0.5rem; /* margin-left: 0.5rem; */
+  padding: 0.5rem;
   text-decoration: none;
   font-size: 1rem;
   border-radius: 0.3rem;
@@ -1880,33 +1912,10 @@ label form [type='radio'] {
 
 /* Styles for the weather header */
 .weather-header {
-  background: #20084a;
-  background: -webkit-linear-gradient(right, #20084a, #3463bc);
-  background: -moz-linear-gradient(right, #20084a, #3463bc);
   background: linear-gradient(to left, #20084a, #3463bc);
 }
 
-/* Set the background image for the entire body */
-body {
-  background-image: url('https://www.saga.co.uk/contentlibrary/saga/publishing/verticals/technology/apps/shutterstock_240459751.jpg');
-  background-size: cover; /* Ensure the image covers the entire background */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center center; /* Center the image */
-  background-attachment: fixed; /* Make the background image fixed */
-  color: white; /* Set the text color to white for better contrast */
-}
-
 /* Additional styles for better readability */
-.container {
-  padding: 20px;
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.5
-  ); /* Add a semi-transparent background to the container */
-  border-radius: 10px;
-}
 .forecast-heading {
   color: rgb(12, 12, 11);
 }
