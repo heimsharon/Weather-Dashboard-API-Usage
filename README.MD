@@ -8,26 +8,33 @@ _A full-stack weather dashboard app with search history, real-time weather, and 
 ![Vite](https://img.shields.io/badge/Vite-Frontend-yellow)
 ![Student Project](https://img.shields.io/badge/student_project-s_heim-yellow)
 
-**Live Demo:** [Weather Dashboard on Render](https://weather-api-mod-9.onrender.com)
+---
+
+## Live Demo
+
+[Weather Dashboard on Render](https://weather-api-mod-9.onrender.com)
 
 ---
 
 ## Table of Contents
 
 - [Weather Dashboard](#weather-dashboard)
+  - [Live Demo](#live-demo)
   - [Table of Contents](#table-of-contents)
   - [Description](#description)
   - [Features](#features)
-  - [Prerequisites](#prerequisites)
-  - [Technologies Used](#technologies-used)
-  - [Quick Start](#quick-start)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [API Documentation](#api-documentation)
-  - [License](#license)
   - [Media](#media)
     - [Screenshot](#screenshot)
     - [Video](#video)
+  - [Technologies Used](#technologies-used)
+  - [Prerequisites](#prerequisites)
+  - [Quick Start](#quick-start)
+  - [Installation](#installation)
+  - [API Documentation](#api-documentation)
+  - [Usage](#usage)
+  - [Deployment](#deployment)
+  - [License](#license)
+  - [Notes](#notes)
   - [Contributing, Support, and FAQ](#contributing-support-and-faq)
   - [Acknowledgments](#acknowledgments)
   - [Author](#author)
@@ -36,7 +43,7 @@ _A full-stack weather dashboard app with search history, real-time weather, and 
 
 ## Description
 
-The Weather Dashboard is a web application that provides real-time weather data and a 5-day forecast for cities worldwide. Users can search for a city to view details such as temperature, wind speed, and humidity. The app stores previously searched cities for quick access and is built with Node.js, Express, TypeScript, and Vite. Weather data is fetched from the [OpenWeather API](https://openweathermap.org/api).
+**The Weather Dashboard** is a web application that provides real-time weather data and a 5-day forecast for cities worldwide. Users can search for a city to view details such as temperature, wind speed, and humidity. The app stores previously searched cities for quick access and is built with Node.js, Express, TypeScript, and Vite. Weather data is fetched from the [OpenWeather API](https://openweathermap.org/api).
 
 ---
 
@@ -50,11 +57,15 @@ The Weather Dashboard is a web application that provides real-time weather data 
 
 ---
 
-## Prerequisites
+## Media
 
-- [Node.js](https://nodejs.org/) (v18 or higher)
-- [npm](https://www.npmjs.com/) (comes with Node.js)
-- An [OpenWeather API key](https://openweathermap.org/api)
+### Screenshot
+
+![Weather Dashboard Screenshot](Assets/Weather-Dash-Board-Demo.png)
+
+### Video
+
+[Watch the application in action](https://drive.google.com/file/d/1xnA_cLHrZ3BbK3Slm0bf_kjhU4KPCstX/view?usp=sharing)
 
 ---
 
@@ -76,10 +87,18 @@ The Weather Dashboard is a web application that provides real-time weather data 
 
 ---
 
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
+- An [OpenWeather API key](https://openweathermap.org/api)
+
+---
+
 ## Quick Start
 
-> You can get the code by either cloning this repository using Git, or downloading it as a ZIP file from GitHub (click the green "Code" button, then "Download ZIP").
-> On GitHub, you can also browse the code, view commit history, open issues, and submit pull requests.
+You can get the code by either cloning this repository using Git, or downloading it as a ZIP file from GitHub (click the green "Code" button, then "Download ZIP").
+On GitHub, you can also browse the code, view commit history, open issues, and submit pull requests.
 
 ---
 
@@ -147,6 +166,12 @@ The Weather Dashboard is a web application that provides real-time weather data 
 
 ---
 
+## API Documentation
+
+See [`API.md`](./API.md) for complete API endpoint documentation.
+
+---
+
 ## Usage
 
 1. **Obtain an OpenWeather API key** from [OpenWeather](https://openweathermap.org/api).
@@ -159,9 +184,15 @@ The Weather Dashboard is a web application that provides real-time weather data 
 
 ---
 
-## API Documentation
+## Deployment
 
-See [`API.md`](./API.md) for complete API endpoint documentation.
+The application can be deployed on any Node.js hosting platform (e.g., Render, Heroku, Vercel). For Render:
+
+1. Create a new web service on [Render](https://render.com/).
+2. Connect your GitHub repository.
+3. Set up environment variables (`API_KEY`, etc.).
+4. Click **Deploy**.
+5. Access your app at the provided Render URL.
 
 ---
 
@@ -169,19 +200,12 @@ See [`API.md`](./API.md) for complete API endpoint documentation.
 
 This project is licensed under the [MIT License](./LICENSE.txt).
 
-See the [MIT License text](https://opensource.org/licenses/MIT) for full details.
-
 ---
 
-## Media
+## Notes
 
-### Screenshot
-
-![Weather Dashboard Screenshot](Assets/Weather-Dash-Board-Demo.png)
-
-### Video
-
-[Watch the application in action](https://drive.google.com/file/d/1xnA_cLHrZ3BbK3Slm0bf_kjhU4KPCstX/view?usp=sharing)
+- The codebase is heavily commented for educational purposes and future reference.
+- The GitHub repository allows you to download, fork, or contribute to the project as needed.
 
 ---
 
