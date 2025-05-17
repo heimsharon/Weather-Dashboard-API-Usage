@@ -17,8 +17,8 @@
     "ext": "ts,json,js",
     "exec": "npx tsc && node dist/server.js"
   },
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
+  "author": "Sharon Heim",
   "dependencies": {
     "dayjs": "^1.11.10",
     "dotenv": "^16.4.5",

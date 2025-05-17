@@ -14,5 +14,7 @@
   },
   "dependencies": {
     "dayjs": "^1.11.10"
-  }
+  },
+  "license": "MIT",
+  "author": "Sharon Heim"
 }
