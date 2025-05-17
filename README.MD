@@ -20,6 +20,7 @@ _A full-stack weather dashboard app with search history, real-time weather, and 
   - [Features](#features)
   - [Prerequisites](#prerequisites)
   - [Technologies Used](#technologies-used)
+  - [Quick Start](#quick-start)
   - [Installation](#installation)
   - [Usage](#usage)
   - [API Documentation](#api-documentation)
@@ -41,31 +42,33 @@ The Weather Dashboard is a web application that provides real-time weather data 
 
 ## Features
 
-* Real-time current weather data and 5-day forecast
-* Search for any global city
-* Displays temperature, wind speed, and humidity
-* Search history with ability to delete entries
-* Responsive design for desktop and mobile
+- Real-time current weather data and 5-day forecast
+- Search for any global city
+- Displays temperature, wind speed, and humidity
+- Search history with ability to delete entries
+- Responsive design for desktop and mobile
 
 ---
 
 ## Prerequisites
 
-* [Node.js](https://nodejs.org/) (v18 or higher)
-* [npm](https://www.npmjs.com/) (comes with Node.js)
-* An [OpenWeather API key](https://openweathermap.org/api)
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
+- An [OpenWeather API key](https://openweathermap.org/api)
 
 ---
 
 ## Technologies Used
 
 **Frontend:**
+
 - [Vite](https://vitejs.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Bootstrap](https://getbootstrap.com/)
 - [FontAwesome](https://fontawesome.com/)
 
 **Backend:**
+
 - [Node.js](https://nodejs.org/)
 - [Express.js](https://expressjs.com/)
 - [TypeScript](https://www.typescriptlang.org/)
@@ -73,67 +76,74 @@ The Weather Dashboard is a web application that provides real-time weather data 
 
 ---
 
+## Quick Start
+
+> You can get the code by either cloning this repository using Git, or downloading it as a ZIP file from GitHub (click the green "Code" button, then "Download ZIP").
+> On GitHub, you can also browse the code, view commit history, open issues, and submit pull requests.
+
+---
+
 ## Installation
 
 1. **Clone the repository:**
 
-    ```bash
-    git clone https://github.com/your-username/weather-dashboard-api-usage.git
-    cd weather-dashboard-api-usage
-    ```
+   ```bash
+   git clone https://github.com/your-username/weather-dashboard-api-usage.git
+   cd weather-dashboard-api-usage
+   ```
 
 2. **Install dependencies for both client and server:**
 
-    ```bash
-    npm run install
-    ```
+   ```bash
+   npm run install
+   ```
 
-    Or install separately:
+   Or install separately:
 
-    ```bash
-    cd client
-    npm install
-    cd ../server
-    npm install
-    ```
+   ```bash
+   cd client
+   npm install
+   cd ../server
+   npm install
+   ```
 
 3. **Set up environment variables:**
 
-    Create a `.env` file in the `server` directory:
+   Create a `.env` file in the `server` directory:
 
-    ```env
-    API_KEY=your_openweather_api_key
-    API_BASE_URL=https://api.openweathermap.org/data/2.5
-    PORT=3001
-    ```
+   ```env
+   API_KEY=your_openweather_api_key
+   API_BASE_URL=https://api.openweathermap.org/data/2.5
+   PORT=3001
+   ```
 
-    > **Note:** Never commit your real `.env` file to version control.
+   > **Note:** Never commit your real `.env` file to version control.
 
 4. **Build the frontend:**
 
-    ```bash
-    cd client
-    npm run build
-    cd ..
-    ```
+   ```bash
+   cd client
+   npm run build
+   cd ..
+   ```
 
 5. **Start the server(s):**
 
-    - **For development:**
+   - **For development:**
 
-        ```bash
-        npm run start:dev
-        ```
+     ```bash
+     npm run start:dev
+     ```
 
-        This runs both the backend and frontend in development mode.
+     This runs both the backend and frontend in development mode.
 
-    - **For production:**
+   - **For production:**
 
-        ```bash
-        npm start
-        ```
+     ```bash
+     npm start
+     ```
 
-        This serves the built frontend from the backend.
+     This serves the built frontend from the backend.
 
 ---
 
@@ -180,10 +190,10 @@ See the [MIT License text](https://opensource.org/licenses/MIT) for full details
 - **Contributions:** Pull requests are welcome! Please open an issue or submit a pull request for improvements or bug fixes.
 - **Support:** If you encounter any issues or have suggestions, please open an issue on GitHub.
 - **FAQ:**
-    - _How do I run the program?_
-      See the [Installation](#installation) and [Usage](#usage) sections above.
-    - _Can I use this for my own project?_
-      Yes, this project is MIT licensed. See the [License](#license) section.
+  - _How do I run the program?_
+    See the [Installation](#installation) and [Usage](#usage) sections above.
+  - _Can I use this for my own project?_
+    Yes, this project is MIT licensed. See the [License](#license) section.
 
 ---
 
@@ -201,5 +211,3 @@ For questions or suggestions, please visit my [GitHub profile](https://github.co
 ---
 
 © 2025 Weather Dashboard Project
-
-
