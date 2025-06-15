@@ -1,6 +1,6 @@
 // This file handles fetching weather data, rendering current and forecast weather, and managing search history
 
-import './styles/jass.css';
+import './styles/index.css';
 
 // Select all necessary DOM elements
 const searchForm: HTMLFormElement = document.getElementById(
@@ -12,7 +12,7 @@ const searchInput: HTMLInputElement = document.getElementById(
 const todayContainer = document.querySelector('#today') as HTMLDivElement;
 const forecastContainer = document.querySelector('#forecast') as HTMLDivElement;
 const searchHistoryContainer = document.getElementById(
-  'history',
+  'history-list',
 ) as HTMLDivElement;
 const heading: HTMLHeadingElement = document.getElementById(
   'search-title',
@@ -29,6 +29,12 @@ const windEl: HTMLParagraphElement = document.getElementById(
 const humidityEl: HTMLParagraphElement = document.getElementById(
   'humidity',
 ) as HTMLParagraphElement;
+const clearHistoryBtn = document.getElementById(
+  'clear-history',
+) as HTMLButtonElement;
+const deleteSelectedCityBtn = document.getElementById(
+  'delete-selected-city',
+) as HTMLButtonElement;
 
 //* API Calls     ======================================================================================================================================================== *//
 
@@ -44,7 +50,6 @@ const fetchWeather = async (cityName: string) => {
     });
 
     const weatherData = await response.json();
-
     console.log('weatherData: ', weatherData);
 
     if (weatherData.error) {
@@ -80,7 +85,7 @@ const fetchSearchHistory = async () => {
 };
 
 // Delete a city from the search history
-const deleteCityFromHistory = async (id: string) => {
+const deleteSelectedCity = async (id: string) => {
   try {
     await fetch(`/api/weather/history/${id}`, {
       method: 'DELETE',
@@ -90,6 +95,20 @@ const deleteCityFromHistory = async (id: string) => {
     });
   } catch (error) {
     console.error('Error deleting city from search history:', error);
+  }
+};
+
+// Clear all search history
+const clearHistory = async () => {
+  try {
+    // Get all cities and delete them one by one
+    const history = await fetchSearchHistory();
+    const deletePromises = history.map((city: any) =>
+      deleteSelectedCity(city.id),
+    );
+    await Promise.all(deletePromises);
+  } catch (error) {
+    console.error('Error clearing history:', error);
   }
 };
 
@@ -108,6 +127,7 @@ const renderCurrentWeather = (currentWeather: any): void => {
   });
 
   heading.textContent = `${city} (${formattedDate})`;
+
   weatherIcon.setAttribute(
     'src',
     `https://openweathermap.org/img/w/${icon}.png`,
@@ -198,9 +218,11 @@ const renderSearchHistory = async (searchHistory: any) => {
   if (searchHistoryContainer) {
     searchHistoryContainer.innerHTML = '';
 
-    if (!searchHistory.length) {
-      searchHistoryContainer.innerHTML =
-        '<p class="text-center">No Previous Search History</p>';
+    if (!searchHistory || !searchHistory.length) {
+      const emptyMessage = document.createElement('p');
+      emptyMessage.textContent = 'No Previous Search History';
+      emptyMessage.classList.add('history-empty-message');
+      searchHistoryContainer.appendChild(emptyMessage);
       return;
     }
 
@@ -255,49 +277,60 @@ const createForecastCard = () => {
   };
 };
 
-// Create history buttons for each city searched (search history)
+// Delete button for each city listed in the search history
+const createDeleteSelectedCityButton = (city: any) => {
+  const deleteBtn = document.createElement('button');
+  deleteBtn.classList.add('delete-selected-city-btn');
+  deleteBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
+  deleteBtn.dataset.cityId = city.id;
+
+  return deleteBtn;
+};
+
 const createHistoryButton = (city: string) => {
   const btn = document.createElement('button');
   btn.setAttribute('type', 'button');
   btn.setAttribute('aria-controls', 'today forecast');
-  btn.classList.add('history-btn', 'btn', 'btn-secondary', 'col-10');
+  btn.classList.add('history-btn');
   btn.textContent = city;
 
   return btn;
 };
 
-// Delate button for each city listed in the search history
-const createDeleteButton = () => {
-  const delBtnEl = document.createElement('button');
-  delBtnEl.setAttribute('type', 'button');
-  delBtnEl.classList.add(
-    'fas',
-    'fa-trash-alt',
-    'delete-city',
-    'btn',
-    'btn-danger',
-    'col-2',
-  );
-
-  delBtnEl.addEventListener('click', handleDeleteHistoryClick);
-  return delBtnEl;
-};
-
-// Create div for search history
-const createHistoryDiv = () => {
-  const div = document.createElement('div');
-  div.classList.add('display-flex', 'gap-2', 'col-12', 'm-1');
-  return div;
-};
-
 // Build a history list item
 const buildHistoryListItem = (city: any) => {
-  const newBtn = createHistoryButton(city.name);
-  const deleteBtn = createDeleteButton();
-  deleteBtn.dataset.city = JSON.stringify(city);
-  const historyDiv = createHistoryDiv();
-  historyDiv.append(newBtn, deleteBtn);
-  return historyDiv;
+  const listItem = document.createElement('li');
+  listItem.classList.add('history-item');
+
+  //Create city button
+  const historyBtn = createHistoryButton(city.name);
+  historyBtn.setAttribute('aria-label', 'Search for this city');
+
+  // Create delete button
+  const deleteBtn = createDeleteSelectedCityButton(city);
+  deleteBtn.setAttribute('aria-label', 'Delete this city');
+  deleteBtn.dataset.cityId = city.id;
+
+  const trashIcon = document.createElement('i');
+  trashIcon.classList.add('fas', 'fa-trash-alt');
+  deleteBtn.appendChild(trashIcon);
+
+  deleteBtn.addEventListener('click', (event) => {
+    const cityId = deleteBtn.dataset.cityId;
+    if (!cityId) {
+      console.error('City ID not found for deletion');
+      return;
+    }
+    event.stopPropagation(); // Prevent the click from bubbling up to the history button
+    // Call the delete function with the city ID
+    console.log('Deleting city with ID:', cityId);
+    handleDeleteSelectedCityClick(event);
+  });
+
+  listItem.append(historyBtn);
+  listItem.append(deleteBtn);
+
+  return listItem;
 };
 
 //* Event Handlers ======================================================================================================================================================== *//
@@ -326,10 +359,22 @@ const handleSearchHistoryClick = (event: any) => {
 };
 
 // Handle delete searched city button click
-const handleDeleteHistoryClick = (event: any) => {
+const handleDeleteSelectedCityClick = async (event: any) => {
   event.stopPropagation();
-  const cityID = JSON.parse(event.target.getAttribute('data-city')).id;
-  deleteCityFromHistory(cityID).then(getAndRenderHistory);
+
+  const cityId = event.currentTarget.dataset.cityId;
+  if (cityId) {
+    await deleteSelectedCity(cityId);
+    await getAndRenderHistory();
+  }
+};
+
+// Handle clear search history button click
+const handleClearHistoryClick = (event: any) => {
+  event.preventDefault();
+  clearHistory().then(getAndRenderHistory);
+  searchHistoryContainer.innerHTML =
+    '<p class="text-center">No Previous Search History</p>';
 };
 
 //* Initial Render ======================================================================================================================================================== *//
@@ -341,6 +386,9 @@ const getAndRenderHistory = () =>
 //Add event listeners
 searchForm?.addEventListener('submit', handleSearchFormSubmit);
 searchHistoryContainer?.addEventListener('click', handleSearchHistoryClick);
+clearHistoryBtn?.addEventListener('click', handleClearHistoryClick);
+deleteSelectedCityBtn?.addEventListener('click', handleDeleteSelectedCityClick);
 
 // Initial render of search history
 getAndRenderHistory();
+

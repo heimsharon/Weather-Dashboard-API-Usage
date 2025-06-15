@@ -1,6 +1,5 @@
 // This file sets up and starts an Express server, serving static files, parsing request data, and connecting API routes
 
-// Import necessary modules and configure environment variables
 import dotenv from 'dotenv';
 import express from 'express';
 import path from 'path';

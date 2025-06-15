@@ -87,7 +87,7 @@ body {
 
 .search-instructions {
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: center;
   margin-bottom: 0.5rem;
 }
@@ -140,6 +140,7 @@ body {
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
+
 .history-heading {
   color: #fff;
   font-size: 1.5rem;
@@ -147,6 +148,7 @@ body {
   margin-bottom: 1rem;
   font-weight: bold;
 }
+
 .history-instructions {
   color: #fff;
   font-size: 1rem;
@@ -218,6 +220,17 @@ body {
   color: #254d78;
 }
 
+.delete-history-btn {
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
 /* -- Forecast -- */
 .main-content {
   flex: 1 1 400px;
