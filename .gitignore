@@ -7,9 +7,8 @@ pnpm-debug.log*
 
 # Dependency directories
 node_modules/
-jspm_packages/
 
-# Build output
+# Build output (handled in client/server, here for completeness)
 dist/
 dist-ssr/
 
@@ -28,26 +27,15 @@ dist-ssr/
 .vscode/
 .idea/
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
 
-# Parcel cache
+# Parcel/Vite cache
 .cache/
 .parcel-cache/
 
-# Prettier configuration
-.prettierrc
-.prettierrc.json
-.prettierrc.js
-
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
+# Test coverage (if any)
+coverage/
+*.lcov
+.nyc_output
 
 # Output of 'npm pack'
 *.tgz

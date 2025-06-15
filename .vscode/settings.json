@@ -1,5 +1,31 @@
 {
-    "cSpell.words": [
-        "jscoverage"
-    ]
+  "cSpell.words": [
+    "fontawesome",
+    "jscoverage",
+    "jspm",
+    "njsproj",
+    "ntvs",
+    "nuxt",
+    "stylelintcache"
+  ],
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#8bb8a6",
+    "activityBar.background": "#8bb8a6",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#86619e",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#8bb8a6",
+    "statusBar.background": "#6ba58e",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#548974",
+    "statusBarItem.remoteBackground": "#6ba58e",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#6ba58e",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#6ba58e99",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "#6ba58e"
 }

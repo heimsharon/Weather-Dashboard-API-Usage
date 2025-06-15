@@ -1,3 +1,19 @@
+# Node dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+.vite/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Environment variable files
+.env
+.env.local
+.env.*.local
+
 # Logs
 logs
 *.log
@@ -5,33 +21,11 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# Editor/project files
+.vscode/
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
-*.sln
-*.sw?
-
-# TypeScript cache
-*.tsbuildinfo
-
-# Vite cache
-.vite
-
-# dotenv environment variable files
-.env
-.env.development.local
-.env.test.local
-.env.production.local
-.env.local
