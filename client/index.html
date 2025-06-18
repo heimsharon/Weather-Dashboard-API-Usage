@@ -1,104 +1,135 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/src/styles/index.css" />
-    <title>Weather Dashboard</title>
-  </head>
 
-  <body>
-    <div class="container">
-      <!-- Header -->
-      <header class="weather-header">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/src/styles/index.css" />
+  <link rel="stylesheet" href="/client/public/styles/footer.css"/>
+  <title>Weather Dashboard</title>
+</head>
+
+<body>
+  <main>
+    <section class="app-container" id="app-container">
+      <header class="header">
         <h1>Weather Dashboard</h1>
       </header>
 
-      <div class="dashboard-layout">
-        <!-- Sidebar for search form and history -->
-        <aside class="weather-search-container">
-          <h2 class="search-heading">Search for a City:</h2>
-          <p class="search-instructions">
-            Enter a city name to get the current weather and 5-day forecast.
-          </p>
-          <form id="search-form" class="search-form" autocomplete="on">
-            <input
-              class="weather-search-box"
-              type="text"
-              id="search-input"
-              placeholder="San Diego"
-              aria-labelledby="search-heading"
-              aria-controls="today forecast"
-              required
-            />
-            <button
-              type="submit"
-              class="search-button"
-              id="search-button"
-              aria-label="submit search"
-            >
-              Search
-            </button>
-          </form>
+      <section class="dashboard-layout">
 
-          <section class="history-container">
-            <h2 class="history-heading">Recent Searches:</h2>
-            <p class="history-instructions">
-              Click on a city to view its weather details.
-            </p>
+        <section class="city-search-container" id="city-search-container">
+          <h2 class="search-heading">Search for a City:</h2>
+            <form id="search-form" class="search-form">
+              <input type="text"
+                id="city-input"
+                class="weather-search-box"
+                placeholder="Enter city name" required />
+                <button type="submit"
+                  class="search-button"
+                  aria-label="Search">
+                  <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </section>
+
+        <aside class="search-history-container">
+          <h2 class="search-history-heading">Recent Searches:</h2>
             <ul id="history-list" class="history-list">
-              <!-- Search history items will be dynamically added here -->
+              <li class="search-history-item">
+                City Name
+                <button class="search-history-item-btn"
+                  aria-label="Delete City">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </li>
             </ul>
-            <button
-              id="delete-selected-city"
-              class="history-btn"
-              aria-label="Delete selected city from history."
-            >
-              Delete City
-            </button>
-            <button
-              id="clear-history"
-              class="history-btn"
-              aria-label="Clear all search history"
-            >
+          <button id="clear-all-search-history-btn"
+            class="clear-all-search-history-btn"
+              aria-label="Clear all search history">
               Clear History
-            </button>
-          </section>
+          </button>
         </aside>
 
         <!-- Main content area for current weather and 5-day forecast -->
-        <main class="main-content">
-          <section aria-live="polite">
-            <div class="card">
-              <div class="card-body" id="today">
-                <h2 class="card-title" id="search-title">
-                  Search for a city!
-                  <img
-                    id="weather-img"
-                    class="weather-img"
-                    alt="Weather icon"
-                  />
-                </h2>
-                <p id="temp">Temperature: °F</p>
-                <p id="wind">Wind: MPH</p>
-                <p id="humidity">Humidity: %</p>
+        <section class="weather-container" id="weather-container">
+          <div class="current-weather-container">
+            <div class="current-header">
+              <h2 id="city-name">City Name</h2>
+              <h3 id="current-date">Date</h3>
+            </div>
+            <div class="current-weather-card" id="current">
+              <div class="unit-toggle">
+                <form id="unit-toggle-form">
+                  <label class="switch">
+                    <input type="checkbox" id="unit-toggle" />
+                    <span class="slider round"></span>
+                  </label>
+                  <span id="unit-label">°F / °C</span>
+                </form>
               </div>
+
+              <img id="weather-icon"
+                class="weather-icon"
+                src=""
+                alt="Weather Icon" />
+              <p id="weather">Weather:</p>
+
+              <p id="temp">Temperature: °F</p>
+              <p id="feels-like">Feels Like: °F</p>
+              <p id="description">Description:</p>
+
+              <p id="high-temp">High: °F</p>
+              <p id="low-temp">Low: °F</p>
+              <p id="uv-index">UV Index:</p>
+              <p id="humidity">Humidity: %</p>
+
+              <p id="clouds">Clouds: %</p>
+              <p id="visibility">Visibility: miles</p>
+
+              <p id="wind-speed">Wind Speed: MPH</p>
+              <p id="wind-gust">Wind Gust: MPH</p>
+              <p id="wind-direction">Wind Direction: °</p>
+
+              <p id="pressure">Pressure: hPa</p>
+              <p id="dew-point">Dew Point: °F</p>
+
+              <p id="sunrise">Sunrise: time</p>
+              <p id="sunset">Sunset: time</p>
+
+            </div>
+          </div>
+
+          <section class="five-day-forecast-container" id="five-day-forecast-container">
+            <h2>5 Day Forecast</h2>
+            <div id="forecast-cards">
+              <!-- Forecast cards will be dynamically added here -->
             </div>
           </section>
-          <section
-            id="forecast"
-            class="forecast-row"
-            aria-live="polite"
-          ></section>
-        </main>
-      </div>
+
+          <section class="alerts-section" id="alerts-section">
+            <h2>Weather Alerts</h2>
+            <div id="alerts-container">
+              <!-- Weather alerts will be dynamically added here -->
+            </div>
+          </section>
+        </section>
+      </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-content">
+      <span>© 2025 Weather Dashboard by Sharon Heim.</span>
+      <span>
+        <a href="https://github.com/your-github" target="_blank" rel="noopener" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+
+      </span>
     </div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+  </footer>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>

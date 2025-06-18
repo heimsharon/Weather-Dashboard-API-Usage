@@ -1,41 +1,28 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-pnpm-debug.log*
-
-# Dependency directories
+# Node modules
 node_modules/
 
-# Build output (handled in client/server, here for completeness)
+# Build output
 dist/
-dist-ssr/
+build/
 
-# TypeScript cache
-*.tsbuildinfo
-
-# Vite cache
-.vite/
-
-# dotenv environment variable files
+# Local environment variables
 .env
 .env.local
-.env.*.local
 
-# Editor directories and files
-.vscode/
-.idea/
+# VS Code settings
+.vscode/settings.json
+
+# OS generated files
 .DS_Store
+Thumbs.db
 
-# Parcel/Vite cache
-.cache/
-.parcel-cache/
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Test coverage (if any)
+# Coverage
 coverage/
 *.lcov
 .nyc_output
 
-# Output of 'npm pack'
-*.tgz
