@@ -787,7 +787,7 @@ a:hover {
   padding-bottom: 1.625rem;
 }
 
-/** Gap UTILITIES 
+/** Gap UTILITIES
     ========================================================================== **/
 
 .gap-0 {
@@ -1888,7 +1888,7 @@ label form [type='radio'] {
 
 /* Set the background image for the entire body */
 body {
-  background-image: url('https://www.saga.co.uk/contentlibrary/saga/publishing/verticals/technology/apps/shutterstock_240459751.jpg');
+  background-image: url('../sunny-sunflowers.jpg');
   background-size: cover; /* Ensure the image covers the entire background */
   background-repeat: no-repeat; /* Prevent the image from repeating */
   background-position: center center; /* Center the image */

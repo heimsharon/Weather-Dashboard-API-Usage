@@ -1,6 +1,6 @@
 // This file handles fetching weather data, rendering current and forecast weather, and managing search history
 
-import './styles/jass.css';
+import '../src/assets/styles/index.css';
 
 // Select all necessary DOM elements
 const searchForm: HTMLFormElement = document.getElementById(
