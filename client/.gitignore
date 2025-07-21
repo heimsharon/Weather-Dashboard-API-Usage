@@ -1,37 +1,44 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# =============================================================================
+# CLIENT-SPECIFIC GITIGNORE TEMPLATE
+# =============================================================================
+# React/Vite frontend patterns
 
-node_modules
-dist
-dist-ssr
+# =============================================================================
+# BUILD & STATIC FILES
+# =============================================================================
+# Client build outputs
+dist/
+build/
+
+# Framework builds
+.next/
+out/
+
+# Generated static files
+public/build/
+public/dist/
+public/static/build/
+
+# =============================================================================
+# CLIENT DEVELOPMENT
+# =============================================================================
+# Vite/React specific
 *.local
+.vite/
 
-# Editor directories and files
-.vscode/
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# Client cache files
+.eslintcache
+.stylelintcache
 
-# TypeScript cache
-*.tsbuildinfo
-
-# Vite cache
-.vite
-
-# dotenv environment variable files
-.env
+# =============================================================================
+# CLIENT ENVIRONMENT
+# =============================================================================
+# Client environment files (contain API keys for frontend)
+.env.local
 .env.development.local
 .env.test.local
 .env.production.local
-.env.local
+
+# Client-specific configs
+vite.config.local.ts
+.env.client
