@@ -22,7 +22,7 @@ The Weather Dashboard is a web application that provides real-time weather data 
 
 ### Screenshot
 
-![Weather Dashboard Screenshot](Assets/new-weather-cap.png)
+![Weather Dashboard Screenshot](client\src\assets\new-weather-cap.png)
 
 ----
 
