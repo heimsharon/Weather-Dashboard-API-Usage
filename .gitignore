@@ -121,24 +121,24 @@ $RECYCLE.BIN/
 .nfs*
 
 # =============================================================================
-# PROGRAMMING LANGUAGES (MODERN WEB STACK)
+# PROGRAMMING LANGUAGES
 # =============================================================================
-# Python (for AI/ML, data processing, backend APIs)
+# Python 
 __pycache__/
 *.py[cod]
 venv/
 .venv/
 .Python
 
-# Go (for high-performance backends)
+# Go 
 go.sum
 
-# Rust (for WebAssembly, performance-critical code)
+# Rust
 target/
 Cargo.lock
 
 # =============================================================================
-# MODERN WEB FRAMEWORKS & TOOLS
+# WEB FRAMEWORKS & TOOLS
 # =============================================================================
 # React/Next.js
 .next/
@@ -166,7 +166,7 @@ storybook-static/
 # =============================================================================
 # DATABASE & DATA FILES
 # =============================================================================
-# Local development databases (uncomment if you want to ignore)
+# Local development databases 
 # *.sqlite
 # *.sqlite3
 # *.db-journal
@@ -180,7 +180,7 @@ storybook-static/
 # =============================================================================
 # CLOUD & DEPLOYMENT
 # =============================================================================
-# Modern hosting platforms
+# Hosting platforms
 .vercel/
 .netlify/
 .railway/
