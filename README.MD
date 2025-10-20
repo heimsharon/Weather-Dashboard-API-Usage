@@ -2,7 +2,9 @@
 
 _Effortlessly view real-time weather and forecasts for any city worldwide._
 
-![React](https://img.shields.io/badge/React-18+-blue) ![Node.js](https://img.shields.io/badge/Node.js-18%2B-brightgreen) ![Express](https://img.shields.io/badge/Express-4.x-lightgrey) ![Student Project](https://img.shields.io/badge/student_project-group_2-yellow)
+![React](https://img.shields.io/badge/React-18+-blue) ![Node.js](https://img.shields.io/badge/Node.js-18%2B-brightgreen) ![Express](https://img.shields.io/badge/Express-4.x-lightgrey) ![Student Project](https://img.shields.io/badge/student_project)
+
+**🌐 Live Demo:** [https://weather-api-mod-9.onrender.com/](https://weather-api-mod-9.onrender.com/)
 
 ----
 
@@ -150,7 +152,9 @@ The application was tested on Render, but it can be deployed in any environment.
 
 4. Click ```Deploy```
 
-5. Once deployed, access your app at the provided Render URL.
+5. Once deployed, access your app at the provided Render URL. Like the link below.
+
+**🌐 Live Demo:** [https://weather-api-mod-9.onrender.com/](https://weather-api-mod-9.onrender.com/)
 
 ----
 
