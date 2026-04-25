@@ -2,7 +2,7 @@
 
 _Effortlessly view real-time weather and forecasts for any city worldwide._
 
-![React](https://img.shields.io/badge/React-18+-blue) ![Node.js](https://img.shields.io/badge/Node.js-18%2B-brightgreen) ![Express](https://img.shields.io/badge/Express-4.x-lightgrey) ![Student Project](https://img.shields.io/badge/student_project)
+![React](https://img.shields.io/badge/React-18+-blue) ![Node.js](https://img.shields.io/badge/Node.js-20%2B-brightgreen) ![Express](https://img.shields.io/badge/Express-5.x-lightgrey) ![Student Project](https://img.shields.io/badge/student_project)
 
 **🌐 Live Demo:** [https://weather-api-mod-9.onrender.com/](https://weather-api-mod-9.onrender.com/)
 
@@ -64,11 +64,16 @@ _**The Weather Dashboard**_ is a web application that provides real-time weather
 - 🟩 [Node.js](https://nodejs.org/)
 - 🚂 [Express.js](https://expressjs.com/)
 
+**Current dependency baseline (April 2026):**
+
+- Client: Vite 8, TypeScript 6
+- Server: Express 5, dotenv 17, TypeScript 6
+
 ----
 
 ## ⚙️ Prerequisites
 
-- 🟩 [Node.js](https://nodejs.org/) (v18 or higher)
+- 🟩 [Node.js](https://nodejs.org/) (v20.19+ recommended)
 - 📦 [npm](https://www.npmjs.com/) (comes with Node.js)
 - 🐙 A GitHub account (for cloning and contributing)
 
@@ -86,14 +91,22 @@ On GitHub, you can also browse the code, view commit history, open issues, and s
 1. **Clone the repository:**
 
 ```bash
-    git clone https://github.com/your-username/project-buddy.git
-    cd project-buddy
+  git clone https://github.com/heimsharon/Weather-Dashboard-API-Usage.git
+  cd Weather-Dashboard-API-Usage
 ```
 
- 2. **Install dependencies for both client and server:**
+ 1. **Install dependencies for both client and server:**
 
 ```bash
     npm run install
+```
+
+1. **(Recommended) Verify dependency security status:**
+
+```bash
+  npm audit
+  cd client && npm audit
+  cd ../server && npm audit
 ```
 
   > **Note:** Alternatively, you can install them separately:
@@ -126,13 +139,13 @@ To initialize the application:
   PORT=your_open_port
 ```
 
-3. Start the application with in the command-line command:
+1. Start the application with in the command-line command:
 
 ```bash
     npm start
 ```
 
-4. For development mode (Optional to run both the client and server) use:
+1. For development mode (Optional to run both the client and server) use:
 
 ```bash
     npm run start:dev

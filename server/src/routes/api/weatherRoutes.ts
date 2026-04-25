@@ -36,6 +36,10 @@ router.get('/history', async (_req: Request, res: Response) => {
 //DELETE city from search history.
 router.delete('/history/:id', async (req: Request, res: Response) => {
   const { id } = req.params;
+  if (typeof id !== 'string') {
+    res.status(400).json({ error: 'Invalid city id' });
+    return;
+  }
   try {
     await HistoryService.removeCity(id);
     console.log(`City with id ${id} removed from search history`);
