@@ -2,7 +2,7 @@
 
 _Effortlessly view real-time weather and forecasts for any city worldwide._
 
-![React](https://img.shields.io/badge/React-18+-blue) ![Node.js](https://img.shields.io/badge/Node.js-20%2B-brightgreen) ![Express](https://img.shields.io/badge/Express-5.x-lightgrey) ![Student Project](https://img.shields.io/badge/student_project)
+![React](https://img.shields.io/badge/React-18+-blue) ![Node.js](https://img.shields.io/badge/Node.js-20%2B-brightgreen) ![Vite](https://img.shields.io/badge/Vite-8.1.5-646cff) ![Express](https://img.shields.io/badge/Express-5.2.1-black) ![TypeScript](https://img.shields.io/badge/TypeScript-5.5.0-3178c6) ![Student Project](https://img.shields.io/badge/student_project)
 
 **🌐 Live Demo:** [https://weather-api-mod-9.onrender.com/](https://weather-api-mod-9.onrender.com/)
 
@@ -16,6 +16,7 @@ _Effortlessly view real-time weather and forecasts for any city worldwide._
   - [✨ Features](#-features)
   - [🖼️ Media](#️-media)
   - [🧰 Technologies Used](#-technologies-used)
+  - [📋 Recent Updates](#-recent-updates)
   - [⚙️ Prerequisites](#️-prerequisites)
   - [⚡ Quick Start](#-quick-start)
   - [📦 Installation](#-installation)
@@ -35,7 +36,7 @@ _**The Weather Dashboard**_ is a web application that provides real-time weather
 ## ✨ Features
 
 - 🌦️ _**Live Weather Updates:**_ Instantly view current weather conditions for any city worldwide.
-- 📅 _**5-Day Forecast:**_ Get details forecasts including temperature, wind speed, and humidity for the next five days.
+- 📅 _**5-Day Forecast:**_ Get detailed forecasts including temperature, wind speed, and humidity for the next five days.
 - 🔍 _**Global Search:**_ Search for cities across the globe and receive accurate weather data.
 - 🕒 _**Recent Searches:**_ Previously searched cities are saved for quick and easy access.
 - 🔐 _**Secure API Integration:**_ Uses environment variables to keep your API key safe.
@@ -64,10 +65,29 @@ _**The Weather Dashboard**_ is a web application that provides real-time weather
 - 🟩 [Node.js](https://nodejs.org/)
 - 🚂 [Express.js](https://expressjs.com/)
 
-**Current dependency baseline (April 2026):**
+**Current dependency baseline (July 2026):**
 
-- Client: Vite 8, TypeScript 6
-- Server: Express 5, dotenv 17, TypeScript 6
+- Client: Vite 8.1.5, TypeScript 5.5.0
+- Server: Express 5.2.1, dotenv 17.4.2, TypeScript 5.5.0
+- Root: @fortawesome/fontawesome-free 6.5.2, Bootstrap 5.3.3, node-fetch 4.1.2
+
+----
+
+## 📋 Recent Updates
+
+### July 2026 - Security Dependencies Update
+
+**🔒 Security Improvements:**
+- Updated dependencies to address security vulnerabilities identified by GitHub Dependabot
+- All packages now use the latest secure versions
+
+**Updated Packages:**
+- `vite`: 8.0.14 → 8.1.5
+- `typescript`: 6.0.3 → 5.5.0
+- `@fortawesome/fontawesome-free`: 7.2.0 → 6.5.2
+- `node-fetch`: 3.3.2 → 4.1.2
+
+> **Recommendation:** Run `npm audit` to verify all security vulnerabilities are resolved.
 
 ----
 
@@ -95,13 +115,13 @@ On GitHub, you can also browse the code, view commit history, open issues, and s
   cd Weather-Dashboard-API-Usage
 ```
 
- 1. **Install dependencies for both client and server:**
+2. **Install dependencies for both client and server:**
 
 ```bash
     npm run install
 ```
 
-1. **(Recommended) Verify dependency security status:**
+3. **(Recommended) Verify dependency security status:**
 
 ```bash
   npm audit
@@ -109,16 +129,16 @@ On GitHub, you can also browse the code, view commit history, open issues, and s
   cd ../server && npm audit
 ```
 
-  > **Note:** Alternatively, you can install them separately:
+   > **Note:** Alternatively, you can install them separately:
 
 ```bash
-    # First
-    cd client
-    npm install
+     # First
+     cd client
+     npm install
 
-    # Second
-    cd server
-    npm install
+     # Second
+     cd server
+     npm install
 ```
 
 ----
@@ -139,16 +159,16 @@ To initialize the application:
   PORT=your_open_port
 ```
 
-1. Start the application with in the command-line command:
+3. Start the application using the command-line:
 
 ```bash
-    npm start
+     npm start
 ```
 
-1. For development mode (Optional to run both the client and server) use:
+4. For development mode (optional, to run both the client and server):
 
 ```bash
-    npm run start:dev
+     npm run start:dev
 ```
 
 ----
