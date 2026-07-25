@@ -1,7 +1,6 @@
 // This file defines API routes for retrieving weather data, managing search history, and deleting  cities from the search history
 
 import dotenv from 'dotenv';
-import fetch from 'node-fetch';
 dotenv.config();
 
 // Interface for Coordinates Object

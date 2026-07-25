@@ -68,8 +68,8 @@ _**The Weather Dashboard**_ is a web application that provides real-time weather
 **Current dependency baseline (July 2026):**
 
 - Client: Vite 8.1.5, TypeScript 5.5.0
-- Server: Express 5.2.1, dotenv 17.4.2, TypeScript 5.5.0
-- Root: @fortawesome/fontawesome-free 6.5.2, Bootstrap 5.3.3, node-fetch 4.1.2
+- Server: Express 5.2.1, dotenv 17.4.2, TypeScript 5.5.0, native Node.js fetch
+- Root: @fortawesome/fontawesome-free 6.5.2, Bootstrap 5.3.3
 
 ----
 
@@ -78,14 +78,16 @@ _**The Weather Dashboard**_ is a web application that provides real-time weather
 ### July 2026 - Security Dependencies Update
 
 **🔒 Security Improvements:**
+
 - Updated dependencies to address security vulnerabilities identified by GitHub Dependabot
 - All packages now use the latest secure versions
 
 **Updated Packages:**
+
 - `vite`: 8.0.14 → 8.1.5
 - `typescript`: 6.0.3 → 5.5.0
 - `@fortawesome/fontawesome-free`: 7.2.0 → 6.5.2
-- `node-fetch`: 3.3.2 → 4.1.2
+- Removed `node-fetch` in favor of the native Fetch API included with Node.js 20+
 
 > **Recommendation:** Run `npm audit` to verify all security vulnerabilities are resolved.
 
@@ -115,13 +117,13 @@ On GitHub, you can also browse the code, view commit history, open issues, and s
   cd Weather-Dashboard-API-Usage
 ```
 
-2. **Install dependencies for both client and server:**
+1. **Install dependencies for both client and server:**
 
 ```bash
     npm run install
 ```
 
-3. **(Recommended) Verify dependency security status:**
+1. **(Recommended) Verify dependency security status:**
 
 ```bash
   npm audit
@@ -159,13 +161,13 @@ To initialize the application:
   PORT=your_open_port
 ```
 
-3. Start the application using the command-line:
+1. Start the application using the command-line:
 
 ```bash
      npm start
 ```
 
-4. For development mode (optional, to run both the client and server):
+1. For development mode (optional, to run both the client and server):
 
 ```bash
      npm run start:dev
